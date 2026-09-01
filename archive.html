@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="아침의 경제 지난 호 목록.">
+<meta name="color-scheme" content="light dark">
+<title>아침의 경제 — 지난 호</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500&display=swap">
+<style>
+  :root{
+    --paper:#F2F5F3;
+    --card:#FBFCFB;
+    --ink:#141D1A;
+    --ink-2:#3D4B46;
+    --ink-3:#6E7C76;
+    --rule:#D5DEDA;
+    --rule-soft:#E4EAE7;
+    --accent:#0B5D4E;
+    --serif:"Gowun Batang","Nanum Myeongjo",Batang,serif;
+    --sans:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#0E1614;
+      --card:#16211E;
+      --ink:#E7EEEA;
+      --ink-2:#B3C1BB;
+      --ink-3:#7E8D87;
+      --rule:#2A3733;
+      --rule-soft:#212C29;
+      --accent:#5CC3A7;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0E1614;
+    --card:#16211E;
+    --ink:#E7EEEA;
+    --ink-2:#B3C1BB;
+    --ink-3:#7E8D87;
+    --rule:#2A3733;
+    --rule-soft:#212C29;
+    --accent:#5CC3A7;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:var(--sans);line-height:1.72;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:41rem;margin:0 auto;padding:2.5rem 1.4rem 4rem}
+  @media (max-width:520px){.wrap{padding:1.75rem 1.1rem 3rem}}
+  .masthead{padding-bottom:1.1rem;border-bottom:2px solid var(--ink)}
+  .eyebrow{
+    font-family:var(--mono);font-size:.68rem;font-weight:500;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);
+  }
+  .masthead h1{
+    font-family:var(--serif);font-weight:700;
+    font-size:clamp(1.9rem,8vw,2.5rem);line-height:1.1;
+    margin:.5rem 0 0;letter-spacing:-.01em;
+  }
+  .masthead p{margin:.7rem 0 0;font-size:.94rem;color:var(--ink-2)}
+  .masthead a{color:var(--accent)}
+
+  /* 발행 목록 — 최신호가 맨 위 */
+  .issues{list-style:none;margin:2rem 0 0;padding:0;display:flex;flex-direction:column;gap:0}
+  .issues li{border-bottom:1px solid var(--rule-soft)}
+  .issues li:first-child{border-top:1px solid var(--rule-soft)}
+  .issues a{
+    display:grid;grid-template-columns:6.5rem 1fr;gap:.9rem;
+    padding:.95rem .2rem;text-decoration:none;color:inherit;align-items:baseline;
+  }
+  .issues a:hover,.issues a:focus-visible{background:var(--card)}
+  .issues .date{
+    font-family:var(--mono);font-variant-numeric:tabular-nums;
+    font-size:.8rem;font-weight:500;color:var(--accent);letter-spacing:.02em;
+  }
+  .issues .no{
+    font-family:var(--mono);font-size:.7rem;color:var(--ink-3);
+    letter-spacing:.06em;display:block;margin-top:.1rem;
+  }
+  .issues .lede{font-size:.92rem;color:var(--ink-2);line-height:1.55}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .colophon{
+    margin-top:2.5rem;padding-top:1.2rem;border-top:1px solid var(--rule);
+    font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;
+    color:var(--ink-3);line-height:1.8;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <span class="eyebrow">Archive</span>
+    <h1>지난 호</h1>
+    <p><a href="https://bhforlife311.github.io/econ-brief/">최신호로 가기</a></p>
+  </header>
+
+  <!-- 새 호는 이 목록 맨 위에 한 줄씩 추가합니다 -->
+  <ul class="issues">
+    <li>
+      <a href="archive/2026-09-01.html">
+        <span class="date">2026.09.01<span class="no">제 1 호</span></span>
+        <span class="lede">내년 나라살림 821조, 금리를 다시 올리겠다는 3대 중앙은행, 그리고 이번 주 마감하는 지원사업들.</span>
+      </a>
+    </li>
+  </ul>
+
+  <p class="colophon">아침의 경제 · 매일 08:00 발행</p>
+
+</div>
+</body>
+</html>
