@@ -15,7 +15,9 @@
 <title>아침의 경제 — 지난 호</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500&display=swap">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@300;400;500&display=swap">
 <style>
   :root{
     --paper:#F2F5F3;
@@ -28,7 +30,7 @@
     --accent:#0B5D4E;
     --serif:"Gowun Batang","Nanum Myeongjo",Batang,serif;
     --sans:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
-    --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+    --num:"Pretendard Variable",Pretendard,"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
   }
   @media (prefers-color-scheme:dark){
     :root:not([data-theme="light"]){
@@ -62,7 +64,7 @@
   @media (max-width:520px){.wrap{padding:1.75rem 1.1rem 3rem}}
   .masthead{padding-bottom:1.1rem;border-bottom:2px solid var(--ink)}
   .eyebrow{
-    font-family:var(--mono);font-size:.68rem;font-weight:500;
+    font-family:var(--num);font-size:.68rem;font-weight:500;
     letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);
   }
   .masthead h1{
@@ -83,18 +85,18 @@
   }
   .issues a:hover,.issues a:focus-visible{background:var(--card)}
   .issues .date{
-    font-family:var(--mono);font-variant-numeric:tabular-nums;
+    font-family:var(--num);font-variant-numeric:tabular-nums;
     font-size:.8rem;font-weight:500;color:var(--accent);letter-spacing:.02em;
   }
   .issues .no{
-    font-family:var(--mono);font-size:.7rem;color:var(--ink-3);
+    font-family:var(--num);font-size:.7rem;color:var(--ink-3);
     letter-spacing:.06em;display:block;margin-top:.1rem;
   }
   .issues .lede{font-size:.92rem;color:var(--ink-2);line-height:1.55}
   :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   .colophon{
     margin-top:2.5rem;padding-top:1.2rem;border-top:1px solid var(--rule);
-    font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;
+    font-family:var(--num);font-size:.7rem;letter-spacing:.06em;
     color:var(--ink-3);line-height:1.8;
   }
 </style>

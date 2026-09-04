@@ -18,7 +18,9 @@
 <title>아침의 경제</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap">
 
 <style>
   :root{
@@ -38,7 +40,7 @@
 
     --serif:"Gowun Batang","Nanum Myeongjo",Batang,serif;
     --sans:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
-    --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+    --num:"Pretendard Variable",Pretendard,"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
   }
   @media (prefers-color-scheme:dark){
     :root:not([data-theme="light"]){
@@ -88,7 +90,7 @@
 
   a{color:inherit}
   .eyebrow{
-    font-family:var(--mono);
+    font-family:var(--num);
     font-size:.68rem;
     font-weight:500;
     letter-spacing:.14em;
@@ -114,7 +116,7 @@
   .masthead-meta{
     display:flex;flex-wrap:wrap;gap:.5rem .9rem;
     align-items:baseline;
-    font-family:var(--mono);
+    font-family:var(--num);
     font-size:.73rem;
     color:var(--ink-3);
     letter-spacing:.04em;
@@ -166,7 +168,7 @@
     letter-spacing:.02em;
   }
   .tick .val{
-    font-family:var(--mono);
+    font-family:var(--num);
     font-variant-numeric:tabular-nums;
     font-size:1.14rem;
     font-weight:600;
@@ -174,7 +176,7 @@
     line-height:1.3;
   }
   .tick .chg{
-    font-family:var(--mono);
+    font-family:var(--num);
     font-variant-numeric:tabular-nums;
     font-size:.74rem;
     font-weight:500;
@@ -193,7 +195,7 @@
   .stories{display:flex;flex-direction:column;gap:1.6rem}
   .story{display:flex;flex-direction:column;gap:.35rem}
   .story .kicker{
-    font-family:var(--mono);
+    font-family:var(--num);
     font-size:.68rem;
     font-weight:600;
     letter-spacing:.12em;
@@ -214,7 +216,7 @@
     margin-top:.45rem;
   }
   .fig{
-    font-family:var(--mono);
+    font-family:var(--num);
     font-variant-numeric:tabular-nums;
     font-size:.72rem;
     font-weight:500;
@@ -240,7 +242,7 @@
     color:var(--ink-2);
   }
   .briefs .tag{
-    font-family:var(--mono);
+    font-family:var(--num);
     font-size:.66rem;
     letter-spacing:.08em;
     text-transform:uppercase;
@@ -263,7 +265,7 @@
     margin:0 0 .1rem;
   }
   .explainer .rom{
-    font-family:var(--mono);
+    font-family:var(--num);
     font-size:.7rem;
     letter-spacing:.08em;
     color:var(--ink-3);
@@ -292,7 +294,7 @@
   }
   .pol:first-child{border-top:1px solid var(--rule-soft)}
   .dday{
-    font-family:var(--mono);
+    font-family:var(--num);
     font-variant-numeric:tabular-nums;
     font-size:.76rem;
     font-weight:600;
@@ -308,7 +310,7 @@
   .pol .title{font-size:.95rem;font-weight:500;line-height:1.5}
   .pol .meta{
     font-size:.78rem;color:var(--ink-3);margin-top:.15rem;
-    font-family:var(--mono);letter-spacing:.01em;
+    font-family:var(--num);letter-spacing:.01em;
   }
   .note{
     margin-top:1.1rem;
@@ -336,7 +338,7 @@
   :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
   .colophon{
     margin-top:2.2rem;
-    font-family:var(--mono);
+    font-family:var(--num);
     font-size:.7rem;
     letter-spacing:.06em;
     color:var(--ink-3);
