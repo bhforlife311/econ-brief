@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="매일 아침 발행되는 한국 경제 브리핑. 시장 지표, 헤드라인 3건, 경제 용어 해설, 정부 지원사업 마감 일정.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#F2F5F3">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0E1614">
+<link rel="manifest" href="/econ-brief/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/econ-brief/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/econ-brief/icons/favicon-32.png">
+<meta name="apple-mobile-web-app-title" content="아침의 경제">
+<meta name="application-name" content="아침의 경제">
+<meta property="og:title" content="아침의 경제">
+<meta property="og:description" content="매일 아침 발행되는 한국 경제 브리핑. 시장 지표, 헤드라인 3건, 경제 용어 해설, 정부 지원사업 마감 일정.">
+<meta property="og:type" content="website">
+<title>아침의 경제</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap">
+
+<style>
+  :root{
+    --paper:#F2F5F3;
+    --card:#FBFCFB;
+    --ink:#141D1A;
+    --ink-2:#3D4B46;
+    --ink-3:#6E7C76;
+    --rule:#D5DEDA;
+    --rule-soft:#E4EAE7;
+    --accent:#0B5D4E;
+    --accent-soft:#E2EFEA;
+    --up:#C0322A;
+    --down:#1D5FA8;
+    --flag:#9A5A05;
+    --flag-soft:#F6ECDC;
+
+    --serif:"Gowun Batang","Nanum Myeongjo",Batang,serif;
+    --sans:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+    --num:"Pretendard Variable",Pretendard,"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#0E1614;
+      --card:#16211E;
+      --ink:#E7EEEA;
+      --ink-2:#B3C1BB;
+      --ink-3:#7E8D87;
+      --rule:#2A3733;
+      --rule-soft:#212C29;
+      --accent:#5CC3A7;
+      --accent-soft:#17302A;
+      --up:#F2726A;
+      --down:#77AEEA;
+      --flag:#E0A85A;
+      --flag-soft:#2C2417;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0E1614;
+    --card:#16211E;
+    --ink:#E7EEEA;
+    --ink-2:#B3C1BB;
+    --ink-3:#7E8D87;
+    --rule:#2A3733;
+    --rule-soft:#212C29;
+    --accent:#5CC3A7;
+    --accent-soft:#17302A;
+    --up:#F2726A;
+    --down:#77AEEA;
+    --flag:#E0A85A;
+    --flag-soft:#2C2417;
+  }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-weight:400;
+    line-height:1.72;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:41rem;margin:0 auto;padding:2.5rem 1.4rem 4rem}
+  @media (max-width:520px){.wrap{padding:1.75rem 1.1rem 3rem}}
+
+  a{color:inherit}
+  .eyebrow{
+    font-family:var(--num);
+    font-size:.68rem;
+    font-weight:500;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+  }
+
+  /* masthead */
+  .masthead{
+    display:flex;flex-direction:column;gap:.5rem;
+    padding-bottom:1.1rem;
+    border-bottom:2px solid var(--ink);
+  }
+  .masthead h1{
+    font-family:var(--serif);
+    font-weight:700;
+    font-size:clamp(2.1rem,9vw,2.9rem);
+    letter-spacing:-.01em;
+    line-height:1.1;
+    margin:0;
+    text-wrap:balance;
+  }
+  .masthead-meta{
+    display:flex;flex-wrap:wrap;gap:.5rem .9rem;
+    align-items:baseline;
+    font-family:var(--num);
+    font-size:.73rem;
+    color:var(--ink-3);
+    letter-spacing:.04em;
+  }
+  .masthead-meta .dot{color:var(--rule)}
+  .standfirst{
+    margin:.9rem 0 0;
+    font-size:.95rem;
+    color:var(--ink-2);
+    line-height:1.65;
+  }
+
+  /* sections */
+  section{margin-top:2.9rem}
+  .sec-head{
+    display:flex;align-items:baseline;gap:.75rem;
+    padding-bottom:.5rem;
+    border-bottom:1px solid var(--rule);
+    margin-bottom:1.4rem;
+  }
+  .sec-head h2{
+    font-family:var(--serif);
+    font-weight:700;
+    font-size:1.32rem;
+    margin:0;
+    letter-spacing:-.005em;
+  }
+  .sec-head .eyebrow{margin-left:auto;white-space:nowrap}
+
+  /* market strip */
+  .ticks{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:1px;
+    background:var(--rule-soft);
+    border:1px solid var(--rule-soft);
+    border-radius:2px;
+    overflow:hidden;
+  }
+  @media (min-width:560px){.ticks{grid-template-columns:repeat(4,1fr)}}
+  .tick{
+    background:var(--card);
+    padding:.8rem .85rem .9rem;
+    display:flex;flex-direction:column;gap:.15rem;
+  }
+  .tick .name{
+    font-size:.75rem;
+    color:var(--ink-3);
+    letter-spacing:.02em;
+  }
+  .tick .val{
+    font-family:var(--num);
+    font-variant-numeric:tabular-nums;
+    font-size:1.14rem;
+    font-weight:600;
+    letter-spacing:-.02em;
+    line-height:1.3;
+  }
+  .tick .chg{
+    font-family:var(--num);
+    font-variant-numeric:tabular-nums;
+    font-size:.74rem;
+    font-weight:500;
+  }
+  .up{color:var(--up)}
+  .down{color:var(--down)}
+  .flat{color:var(--ink-3)}
+  .ticks-note{
+    margin:.55rem 0 0;
+    font-size:.78rem;
+    color:var(--ink-3);
+    line-height:1.6;
+  }
+
+  /* stories */
+  .stories{display:flex;flex-direction:column;gap:1.6rem}
+  .story{display:flex;flex-direction:column;gap:.35rem}
+  .story .kicker{
+    font-family:var(--num);
+    font-size:.68rem;
+    font-weight:600;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--accent);
+  }
+  .story h3{
+    font-family:var(--serif);
+    font-size:1.18rem;
+    font-weight:700;
+    line-height:1.42;
+    margin:0;
+    text-wrap:balance;
+  }
+  .story p{margin:.1rem 0 0;font-size:.94rem;color:var(--ink-2)}
+  .story .figs{
+    display:flex;flex-wrap:wrap;gap:.4rem;
+    margin-top:.45rem;
+  }
+  .fig{
+    font-family:var(--num);
+    font-variant-numeric:tabular-nums;
+    font-size:.72rem;
+    font-weight:500;
+    padding:.2rem .5rem;
+    border:1px solid var(--rule);
+    border-radius:2px;
+    color:var(--ink-2);
+    background:var(--card);
+    white-space:nowrap;
+  }
+  .fig b{color:var(--ink);font-weight:600}
+
+  .briefs{
+    list-style:none;margin:1.6rem 0 0;padding:1.1rem 0 0;
+    border-top:1px solid var(--rule-soft);
+    display:flex;flex-direction:column;gap:.6rem;
+  }
+  .briefs li{
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:.7rem;
+    font-size:.9rem;
+    color:var(--ink-2);
+  }
+  .briefs .tag{
+    font-family:var(--num);
+    font-size:.66rem;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+    padding-top:.28rem;
+    white-space:nowrap;
+  }
+
+  /* explainer */
+  .explainer{
+    background:var(--card);
+    border:1px solid var(--rule);
+    border-radius:3px;
+    padding:1.4rem 1.3rem;
+  }
+  .explainer .term{
+    font-family:var(--serif);
+    font-size:1.3rem;
+    font-weight:700;
+    margin:0 0 .1rem;
+  }
+  .explainer .rom{
+    font-family:var(--num);
+    font-size:.7rem;
+    letter-spacing:.08em;
+    color:var(--ink-3);
+    text-transform:uppercase;
+    margin:0;
+  }
+  .explainer p.body{font-size:.94rem;color:var(--ink-2);margin:.9rem 0 0}
+  .explainer p.body:first-of-type{margin-top:1rem}
+  .explainer .sokey{
+    margin:1.1rem 0 0;padding-top:.9rem;
+    border-top:1px dashed var(--rule);
+    font-size:.9rem;
+    color:var(--ink-2);
+  }
+  .explainer .sokey b{color:var(--accent);font-weight:600}
+
+  /* policy */
+  .policy{display:flex;flex-direction:column;gap:0}
+  .pol{
+    display:grid;
+    grid-template-columns:3.4rem 1fr;
+    gap:.9rem;
+    padding:.95rem 0;
+    border-bottom:1px solid var(--rule-soft);
+    align-items:start;
+  }
+  .pol:first-child{border-top:1px solid var(--rule-soft)}
+  .dday{
+    font-family:var(--num);
+    font-variant-numeric:tabular-nums;
+    font-size:.76rem;
+    font-weight:600;
+    text-align:center;
+    padding:.22rem 0;
+    border-radius:2px;
+    background:var(--accent-soft);
+    color:var(--accent);
+    letter-spacing:.02em;
+  }
+  .dday.urgent{background:var(--flag-soft);color:var(--flag)}
+  .dday.open{background:transparent;color:var(--ink-3);border:1px solid var(--rule)}
+  .pol .title{font-size:.95rem;font-weight:500;line-height:1.5}
+  .pol .meta{
+    font-size:.78rem;color:var(--ink-3);margin-top:.15rem;
+    font-family:var(--num);letter-spacing:.01em;
+  }
+  .note{
+    margin-top:1.1rem;
+    font-size:.85rem;
+    color:var(--ink-3);
+    line-height:1.6;
+    padding-left:.85rem;
+    border-left:2px solid var(--rule);
+  }
+
+  /* sources */
+  .sources{margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--rule)}
+  .sources ul{
+    list-style:none;margin:.9rem 0 0;padding:0;
+    display:flex;flex-direction:column;gap:.45rem;
+    font-size:.82rem;
+  }
+  .sources a{
+    color:var(--ink-2);
+    text-decoration:none;
+    border-bottom:1px solid var(--rule);
+    padding-bottom:1px;
+  }
+  .sources a:hover,.sources a:focus-visible{color:var(--accent);border-color:var(--accent)}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  .colophon{
+    margin-top:2.2rem;
+    font-family:var(--num);
+    font-size:.7rem;
+    letter-spacing:.06em;
+    color:var(--ink-3);
+    line-height:1.8;
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="masthead-meta">
+      <span>2026.10.05 월</span>
+      <span class="dot">/</span>
+      <span>제 32 호</span>
+      <span class="dot">/</span>
+      <span>08:00 KST</span>
+    </div>
+    <h1>아침의 경제</h1>
+    <p class="standfirst">오늘 아침 챙길 것 — 개천절 대체공휴일로 증시가 쉬는 날, 금리 상승에 맞서 10월 국고채 발행을 5조원 줄인 정부의 결정과 10월에도 3% 안팎일 것이라는 한은의 물가 전망, 86주째 오른 서울 아파트값, 10월부터 오른 버스 요금입니다.</p>
+  </header>
+
+  <section>
+    <div class="sec-head">
+      <h2>시장</h2>
+      <span class="eyebrow">10월 2일(금) 종가</span>
+    </div>
+    <div class="ticks">
+      <div class="tick">
+        <span class="name">코스피</span>
+        <span class="val">7,003.74</span>
+        <span class="chg up">▲ 32.39 &nbsp;+0.46%</span>
+      </div>
+      <div class="tick">
+        <span class="name">코스닥</span>
+        <span class="val">893.29</span>
+        <span class="chg down">▼ 1.00 &nbsp;-0.11%</span>
+      </div>
+      <div class="tick">
+        <span class="name">원/달러</span>
+        <span class="val">1,350.6</span>
+        <span class="chg down">▼ 7.8 원</span>
+      </div>
+    </div>
+    <p class="ticks-note">오늘은 개천절 대체공휴일이라 코스피와 코스닥 모두 휴장합니다. 위 숫자는 마지막 거래일인 금요일(10월 2일) 종가 기준입니다. 증시는 내일 6일(화)에 다시 열립니다.</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 헤드라인</h2>
+      <span class="eyebrow">4건</span>
+    </div>
+
+    <div class="stories">
+
+      <article class="story">
+        <span class="kicker">재정</span>
+        <h3>금리 뛰자 국고채 발행 5조원 축소, 긴급 바이백도 검토</h3>
+        <p>이형일 부총리 겸 재정경제부 장관은 2일 10월 국고채 발행 물량을 5조원 줄이겠다고 밝혔습니다. 글로벌 금리 상승으로 국내 채권시장이 흔들리는 데 대응한 조치입니다. 2·3·5·10년물 경과종목을 대상으로 3조5000억원 규모의 바이백, 곧 만기 전 조기 매입도 진행합니다. 필요하면 발행을 더 줄이고 시장 상황에 따라 긴급 바이백을 병행할 수 있다는 입장입니다. 국채를 덜 내놓으면 시장에 풀리는 물량이 줄어 금리 상승 압력이 누그러집니다. 정부가 채권시장 불안을 그만큼 무겁게 본다는 신호이기도 합니다.</p>
+        <div class="figs">
+          <span class="fig">10월 국고채 발행 <b>-5조원</b></span>
+          <span class="fig">바이백 <b>3.5조원</b></span>
+        </div>
+      </article>
+
+      <article class="story">
+        <span class="kicker">금리</span>
+        <h3>한은 "10월 물가도 3% 안팎", 기준금리 결정 셈법 복잡</h3>
+        <p>한국은행은 10월 소비자물가 상승률이 3% 내외의 높은 수준을 보일 것으로 내다봤습니다. 9월 상승률은 2.9%로 전달 3.1%보다 낮아졌지만, 한은은 다음 달 다시 오를 것으로 봅니다. 한편 미국의 9월 비농업 일자리는 2만9000명 늘어 시장 예상치 8만4000명의 3분의 1 수준에 그쳤고, 실업률은 4.1%에서 4.2%로 올랐습니다. 미국 고용이 식으면서 연준이 금리를 더 올릴 가능성이 낮아져 한은의 부담은 덜했지만, 국내 물가가 높아 동결과 추가 인상 사이의 판단은 간단하지 않다는 분석이 나옵니다. 한은 금융통화위원회 회의는 22일입니다.</p>
+        <div class="figs">
+          <span class="fig">9월 소비자물가 <b>+2.9%</b>(전월 3.1%)</span>
+          <span class="fig">미 9월 일자리 <b>+2.9만개</b></span>
+        </div>
+      </article>
+
+      <article class="story">
+        <span class="kicker">부동산</span>
+        <h3>서울 아파트값 86주째 상승, 전문가 5인 "연말까지 오른다"</h3>
+        <p>서울 아파트값이 86주 연속 오르며 역대 최장 상승 기록을 새로 썼습니다. 파이낸셜뉴스가 부동산 전문가 5인에게 연말까지의 흐름을 물었더니 모두 상승세가 이어진다고 답했습니다. 신규 공급이 부족하고 전세 불안이 이어지는 구조적 요인을 이유로 들었습니다. 변수로는 기준금리 인상이 꼽혔습니다. 금리가 오르면 이자 부담 탓에 매수 심리가 식을 수 있지만, 다른 상승 요인이 강해 영향이 제한적일 것이라는 의견도 있었습니다. 지역별로는 고가 주택 밀집 지역의 추가 하락이 예상되는 반면, 실수요가 몰리는 10억원대 시장은 오름세가 이어질 수 있다는 전망입니다.</p>
+        <div class="figs">
+          <span class="fig">서울 아파트값 <b>86주 연속 상승</b></span>
+        </div>
+      </article>
+
+      <article class="story">
+        <span class="kicker">생활물가</span>
+        <h3>10월부터 시외·고속버스 운임 상한 9% 인상</h3>
+        <p>국토교통부는 지난달 26일 10월 1일부터 시외버스와 고속버스 운임 상한을 각각 9% 올린다고 발표했습니다. 같은 시기 과자와 음료 가격도 오른 것으로 알려졌습니다. 추석 민생안정 대책에 1900억원가량이 투입됐지만 농축수산물 값은 여전히 높고, 가공식품과 내구재까지 가격 상승 압력이 번지고 있다는 보도도 나왔습니다. 재정경제부는 농축수산물 수급·가격 관리를 강화하고 석유류 가격 안정 대책도 계속 추진하겠다는 입장입니다. 연휴가 끝나는 내일부터 이 인상분을 체감하는 사람이 늘 것입니다.</p>
+        <div class="figs">
+          <span class="fig">버스 운임 상한 <b>+9%</b>(10월 1일부터)</span>
+        </div>
+      </article>
+
+    </div>
+
+    <ul class="briefs">
+      <li><span class="tag">일정</span><span>10월 6일(화)부터 은행과 관공서가 정상 운영합니다. 증시는 9일(금)에도 한글날로 휴장합니다.</span></li>
+      <li><span class="tag">환율</span><span>하나은행은 10월 원/달러 환율이 1345~1370원 범위에서 움직일 것으로 내다봤습니다.</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>정부 지원사업</h2>
+      <span class="eyebrow">확인된 공고 없음</span>
+    </div>
+    <div class="policy">
+    </div>
+    <p class="note">오늘은 확인된 신규 공고가 없습니다. 이번 세션에서는 정책브리핑과 복지로 원문에 접속할 수 없어 신청기간을 직접 확인하지 못했고, 검색 요약만으로는 신청기간을 싣지 않는다는 원칙에 따라 이 섹션을 비웁니다.</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>경제 지식 한 조각</h2>
+      <span class="eyebrow">오늘의 단어</span>
+    </div>
+    <div class="explainer">
+      <p class="rom">CORE INFLATION</p>
+      <h3 class="term">근원물가</h3>
+      <p class="body">근원물가는 소비자물가에서 값이 들쑥날쑥한 품목을 빼고 계산한 물가입니다. 날씨에 따라 오르내리는 농산물과 국제 유가에 따라 움직이는 석유류가 대표적입니다. 이런 품목은 일시적 요인으로 값이 크게 흔들려, 물가의 기조적인 흐름을 가리기 쉽습니다.</p>
+      <p class="body">그래서 중앙은행은 전체 물가와 함께 근원물가를 따로 봅니다. 전체 물가가 기름값 때문에 올랐다면 유가가 내릴 때 저절로 가라앉을 수 있습니다. 반면 근원물가가 높게 유지되면 서비스 요금이나 임금처럼 한번 오르면 잘 내려오지 않는 가격이 오르고 있다는 뜻이어서, 금리 판단에 더 무겁게 반영됩니다.</p>
+      <p class="sokey">그래서 오늘 —<br>한은은 10월 소비자물가가 3% 안팎일 것이라 내다보면서 근원물가의 높은 오름세가 이어지고 있다는 점도 함께 짚었습니다. 22일 금융통화위원회에서 금리를 어떻게 정할지는 전체 물가뿐 아니라 이 근원물가의 흐름에도 달려 있습니다.</p>
+    </div>
+  </section>
+
+  <footer class="sources">
+    <span class="eyebrow">출처</span>
+    <ul>
+      <li><a href="https://www.seoul.co.kr/news/economy/2026/10/02/20261002500054">정부, 국채 발행 5조원 축소… 이형일 “필요시 추가 축소·긴급 바이백 병행” — 서울신문</a></li>
+      <li><a href="https://www.sedaily.com/article/20097252">[속보] 10월 국고채 발행 5조 축소…3.5조 바이백 — 서울경제</a></li>
+      <li><a href="https://www.ajunews.com/view/20261002100728424">이형일 "필요시 국고채 발행 추가 축소"…긴급 바이백도 검토 — 아주경제</a></li>
+      <li><a href="https://www.seoul.co.kr/news/economy/finance/2026/10/02/20261002500105">한은 “10월 소비자물가 상승률 3% 내외 높은 수준 예상” — 서울신문</a></li>
+      <li><a href="https://www.news1.kr/economy/trend/6308735">한은 "10월 물가도 3% 안팎…기저효과 감안하면 오름세 다소 확대" — 뉴스1</a></li>
+      <li><a href="https://biz.newdaily.co.kr/site/data/html/2026/10/03/2026100300025.html">美 고용은 식었는데 韓 물가는 3% … 한은, 10월 금리결정 '딜레마' — 뉴데일리</a></li>
+      <li><a href="https://www.fnnews.com/news/202610050600271408">서울 집값 "더 간다" 무게…'금리 인상'은 변수[집값, 최장 랠리③] — 파이낸셜뉴스</a></li>
+      <li><a href="https://mt.co.kr/economy/2026/10/02/2026100210164793390">추석 '1900억' 쏟아도 들썩이는 물가…10월 3%대 복귀하나 — 머니투데이</a></li>
+      <li><a href="https://v.daum.net/v/20260927164529670">추석 끝나자 기다렸다는 듯…10월부터 가격 오르는 것들 — 다음뉴스</a></li>
+      <li><a href="https://www.seoul.co.kr/news/economy/securities/2026/10/02/20261002500187">코스피 7000선 되찾았다… 환율은 7.8원 내린 1350.6원 — 서울신문</a></li>
+      <li><a href="https://www.lecturernews.com/news/articleView.html?idxno=211309">2026년 개천절 10월 5일 대체공휴일 지정 — 한국강사신문</a></li>
+    </ul>
+    <p class="colophon">
+      아침의 경제 · 매일 08:00 발행 · <a href="https://bhforlife311.github.io/econ-brief/archive.html">지난 호</a><br>
+      기사 요약과 해설은 원문을 바탕으로 재구성한 것입니다. 투자 판단의 근거로 삼지 마세요.
+    </p>
+  </footer>
+
+</div>
+</body>
+</html>
