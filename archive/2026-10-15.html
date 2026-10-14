@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="매일 아침 발행되는 한국 경제 브리핑. 시장 지표, 헤드라인 3건, 경제 용어 해설, 정부 지원사업 마감 일정.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#F2F5F3">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0E1614">
+<link rel="manifest" href="/econ-brief/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/econ-brief/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/econ-brief/icons/favicon-32.png">
+<meta name="apple-mobile-web-app-title" content="아침의 경제">
+<meta name="application-name" content="아침의 경제">
+<meta property="og:title" content="아침의 경제">
+<meta property="og:description" content="매일 아침 발행되는 한국 경제 브리핑. 시장 지표, 헤드라인 3건, 경제 용어 해설, 정부 지원사업 마감 일정.">
+<meta property="og:type" content="website">
+<title>아침의 경제</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap">
+
+<style>
+  :root{
+    --paper:#F2F5F3;
+    --card:#FBFCFB;
+    --ink:#141D1A;
+    --ink-2:#3D4B46;
+    --ink-3:#6E7C76;
+    --rule:#D5DEDA;
+    --rule-soft:#E4EAE7;
+    --accent:#0B5D4E;
+    --accent-soft:#E2EFEA;
+    --up:#C0322A;
+    --down:#1D5FA8;
+    --flag:#9A5A05;
+    --flag-soft:#F6ECDC;
+
+    --serif:"Gowun Batang","Nanum Myeongjo",Batang,serif;
+    --sans:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+    --num:"Pretendard Variable",Pretendard,"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#0E1614;
+      --card:#16211E;
+      --ink:#E7EEEA;
+      --ink-2:#B3C1BB;
+      --ink-3:#7E8D87;
+      --rule:#2A3733;
+      --rule-soft:#212C29;
+      --accent:#5CC3A7;
+      --accent-soft:#17302A;
+      --up:#F2726A;
+      --down:#77AEEA;
+      --flag:#E0A85A;
+      --flag-soft:#2C2417;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0E1614;
+    --card:#16211E;
+    --ink:#E7EEEA;
+    --ink-2:#B3C1BB;
+    --ink-3:#7E8D87;
+    --rule:#2A3733;
+    --rule-soft:#212C29;
+    --accent:#5CC3A7;
+    --accent-soft:#17302A;
+    --up:#F2726A;
+    --down:#77AEEA;
+    --flag:#E0A85A;
+    --flag-soft:#2C2417;
+  }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-weight:400;
+    line-height:1.72;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:41rem;margin:0 auto;padding:2.5rem 1.4rem 4rem}
+  @media (max-width:520px){.wrap{padding:1.75rem 1.1rem 3rem}}
+
+  a{color:inherit}
+  .eyebrow{
+    font-family:var(--num);
+    font-size:.68rem;
+    font-weight:500;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+  }
+
+  /* masthead */
+  .masthead{
+    display:flex;flex-direction:column;gap:.5rem;
+    padding-bottom:1.1rem;
+    border-bottom:2px solid var(--ink);
+  }
+  .masthead h1{
+    font-family:var(--serif);
+    font-weight:700;
+    font-size:clamp(2.1rem,9vw,2.9rem);
+    letter-spacing:-.01em;
+    line-height:1.1;
+    margin:0;
+    text-wrap:balance;
+  }
+  .masthead-meta{
+    display:flex;flex-wrap:wrap;gap:.5rem .9rem;
+    align-items:baseline;
+    font-family:var(--num);
+    font-size:.73rem;
+    color:var(--ink-3);
+    letter-spacing:.04em;
+  }
+  .masthead-meta .dot{color:var(--rule)}
+  .standfirst{
+    margin:.9rem 0 0;
+    font-size:.95rem;
+    color:var(--ink-2);
+    line-height:1.65;
+  }
+
+  /* sections */
+  section{margin-top:2.9rem}
+  .sec-head{
+    display:flex;align-items:baseline;gap:.75rem;
+    padding-bottom:.5rem;
+    border-bottom:1px solid var(--rule);
+    margin-bottom:1.4rem;
+  }
+  .sec-head h2{
+    font-family:var(--serif);
+    font-weight:700;
+    font-size:1.32rem;
+    margin:0;
+    letter-spacing:-.005em;
+  }
+  .sec-head .eyebrow{margin-left:auto;white-space:nowrap}
+
+  /* market strip */
+  .ticks{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:1px;
+    background:var(--rule-soft);
+    border:1px solid var(--rule-soft);
+    border-radius:2px;
+    overflow:hidden;
+  }
+  @media (min-width:560px){.ticks{grid-template-columns:repeat(4,1fr)}}
+  .tick{
+    background:var(--card);
+    padding:.8rem .85rem .9rem;
+    display:flex;flex-direction:column;gap:.15rem;
+  }
+  .tick .name{
+    font-size:.75rem;
+    color:var(--ink-3);
+    letter-spacing:.02em;
+  }
+  .tick .val{
+    font-family:var(--num);
+    font-variant-numeric:tabular-nums;
+    font-size:1.14rem;
+    font-weight:600;
+    letter-spacing:-.02em;
+    line-height:1.3;
+  }
+  .tick .chg{
+    font-family:var(--num);
+    font-variant-numeric:tabular-nums;
+    font-size:.74rem;
+    font-weight:500;
+  }
+  .up{color:var(--up)}
+  .down{color:var(--down)}
+  .flat{color:var(--ink-3)}
+  .ticks-note{
+    margin:.55rem 0 0;
+    font-size:.78rem;
+    color:var(--ink-3);
+    line-height:1.6;
+  }
+
+  /* stories */
+  .stories{display:flex;flex-direction:column;gap:1.6rem}
+  .story{display:flex;flex-direction:column;gap:.35rem}
+  .story .kicker{
+    font-family:var(--num);
+    font-size:.68rem;
+    font-weight:600;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--accent);
+  }
+  .story h3{
+    font-family:var(--serif);
+    font-size:1.18rem;
+    font-weight:700;
+    line-height:1.42;
+    margin:0;
+    text-wrap:balance;
+  }
+  .story p{margin:.1rem 0 0;font-size:.94rem;color:var(--ink-2)}
+  .story .figs{
+    display:flex;flex-wrap:wrap;gap:.4rem;
+    margin-top:.45rem;
+  }
+  .fig{
+    font-family:var(--num);
+    font-variant-numeric:tabular-nums;
+    font-size:.72rem;
+    font-weight:500;
+    padding:.2rem .5rem;
+    border:1px solid var(--rule);
+    border-radius:2px;
+    color:var(--ink-2);
+    background:var(--card);
+    white-space:nowrap;
+  }
+  .fig b{color:var(--ink);font-weight:600}
+
+  .briefs{
+    list-style:none;margin:1.6rem 0 0;padding:1.1rem 0 0;
+    border-top:1px solid var(--rule-soft);
+    display:flex;flex-direction:column;gap:.6rem;
+  }
+  .briefs li{
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:.7rem;
+    font-size:.9rem;
+    color:var(--ink-2);
+  }
+  .briefs .tag{
+    font-family:var(--num);
+    font-size:.66rem;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+    padding-top:.28rem;
+    white-space:nowrap;
+  }
+
+  /* explainer */
+  .explainer{
+    background:var(--card);
+    border:1px solid var(--rule);
+    border-radius:3px;
+    padding:1.4rem 1.3rem;
+  }
+  .explainer .term{
+    font-family:var(--serif);
+    font-size:1.3rem;
+    font-weight:700;
+    margin:0 0 .1rem;
+  }
+  .explainer .rom{
+    font-family:var(--num);
+    font-size:.7rem;
+    letter-spacing:.08em;
+    color:var(--ink-3);
+    text-transform:uppercase;
+    margin:0;
+  }
+  .explainer p.body{font-size:.94rem;color:var(--ink-2);margin:.9rem 0 0}
+  .explainer p.body:first-of-type{margin-top:1rem}
+  .explainer .sokey{
+    margin:1.1rem 0 0;padding-top:.9rem;
+    border-top:1px dashed var(--rule);
+    font-size:.9rem;
+    color:var(--ink-2);
+  }
+  .explainer .sokey b{color:var(--accent);font-weight:600}
+
+  /* policy */
+  .policy{display:flex;flex-direction:column;gap:0}
+  .pol{
+    display:grid;
+    grid-template-columns:3.4rem 1fr;
+    gap:.9rem;
+    padding:.95rem 0;
+    border-bottom:1px solid var(--rule-soft);
+    align-items:start;
+  }
+  .pol:first-child{border-top:1px solid var(--rule-soft)}
+  .dday{
+    font-family:var(--num);
+    font-variant-numeric:tabular-nums;
+    font-size:.76rem;
+    font-weight:600;
+    text-align:center;
+    padding:.22rem 0;
+    border-radius:2px;
+    background:var(--accent-soft);
+    color:var(--accent);
+    letter-spacing:.02em;
+  }
+  .dday.urgent{background:var(--flag-soft);color:var(--flag)}
+  .dday.open{background:transparent;color:var(--ink-3);border:1px solid var(--rule)}
+  .pol .title{font-size:.95rem;font-weight:500;line-height:1.5}
+  .pol .meta{
+    font-size:.78rem;color:var(--ink-3);margin-top:.15rem;
+    font-family:var(--num);letter-spacing:.01em;
+  }
+  .note{
+    margin-top:1.1rem;
+    font-size:.85rem;
+    color:var(--ink-3);
+    line-height:1.6;
+    padding-left:.85rem;
+    border-left:2px solid var(--rule);
+  }
+
+  /* sources */
+  .sources{margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--rule)}
+  .sources ul{
+    list-style:none;margin:.9rem 0 0;padding:0;
+    display:flex;flex-direction:column;gap:.45rem;
+    font-size:.82rem;
+  }
+  .sources a{
+    color:var(--ink-2);
+    text-decoration:none;
+    border-bottom:1px solid var(--rule);
+    padding-bottom:1px;
+  }
+  .sources a:hover,.sources a:focus-visible{color:var(--accent);border-color:var(--accent)}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  .colophon{
+    margin-top:2.2rem;
+    font-family:var(--num);
+    font-size:.7rem;
+    letter-spacing:.06em;
+    color:var(--ink-3);
+    line-height:1.8;
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="masthead-meta">
+      <span>2026.10.15 목</span>
+      <span class="dot">/</span>
+      <span>제 35 호</span>
+      <span class="dot">/</span>
+      <span>08:00 KST</span>
+    </div>
+    <h1>아침의 경제</h1>
+    <p class="standfirst">오늘 아침 챙길 것 — 6거래일 연속 내려 6000선을 간신히 지킨 코스피, 1.57% 빠진 코스닥, 1338원대로 내린 원/달러 환율, 주택담보대출 위험가중치 추가 인상 여지를 남긴 금융당국입니다.</p>
+  </header>
+
+  <section>
+    <div class="sec-head">
+      <h2>시장</h2>
+      <span class="eyebrow">10월 14일(수) 종가</span>
+    </div>
+    <div class="ticks">
+      <div class="tick">
+        <span class="name">코스피</span>
+        <span class="val">6,008.81</span>
+        <span class="chg down">▼ 26.54 &nbsp;-0.44%</span>
+      </div>
+      <div class="tick">
+        <span class="name">코스닥</span>
+        <span class="val">823.88</span>
+        <span class="chg down">▼ 13.15 &nbsp;-1.57%</span>
+      </div>
+      <div class="tick">
+        <span class="name">원/달러</span>
+        <span class="val">1,338.3</span>
+        <span class="chg down">▼ 6.8 &nbsp;-0.51%</span>
+      </div>
+    </div>
+    <p class="ticks-note">코스피·코스닥은 한국거래소 마감 기준, 환율은 오후 3시 30분 서울 외환시장 마감 기준입니다.</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 헤드라인</h2>
+      <span class="eyebrow">3건</span>
+    </div>
+
+    <div class="stories">
+
+      <article class="story">
+        <span class="kicker">증시</span>
+        <h3>코스피 6거래일 연속 하락, 6000선 턱걸이 마감</h3>
+        <p>코스피는 14일 전 거래일보다 26.54포인트 내린 6008.81에 마감했습니다. 장 초반에는 2%대 올라 6190선까지 갔지만 오후 들어 상승분을 모두 내줬습니다. 외국인이 유가증권시장에서 1조원 넘게 순매도하며 반도체 대형주를 판 것이 지수를 눌렀습니다. 네덜란드 반도체 장비업체 ASML이 시장 기대를 웃도는 실적을 내놓았지만 차익실현 매물이 나와 투자심리 회복으로 이어지지 못했습니다. 국제유가 상승과 미국 소비자물가지수 발표를 앞둔 경계심리도 거론됩니다. 순매도 금액은 매체마다 조금씩 달라 정확한 규모는 적지 않았습니다.</p>
+        <div class="figs">
+          <span class="fig">코스피 <b>6,008.81</b></span>
+          <span class="fig">하락 <b>6거래일 연속</b></span>
+        </div>
+      </article>
+
+      <article class="story">
+        <span class="kicker">증시</span>
+        <h3>코스닥도 1.57% 내려 823.88, 외국인은 코스닥에서도 순매도</h3>
+        <p>코스닥은 같은 날 13.15포인트 내린 823.88로 거래를 마쳤습니다. 코스피보다 낙폭이 컸고, 외국인은 코스닥 시장에서도 2000억원대를 팔았다고 보도됐습니다. 전날 12일 4% 넘게 급락한 뒤 반등하지 못한 채 약세가 이어진 흐름입니다. 외국인 수급이 대형주와 중소형주 모두에서 한쪽으로 쏠리고 있다는 점이 요즘 시장의 특징입니다.</p>
+        <div class="figs">
+          <span class="fig">코스닥 <b>-1.57%</b></span>
+        </div>
+      </article>
+
+      <article class="story">
+        <span class="kicker">금융</span>
+        <h3>금융위원장 "주담대 위험가중치 추가 인상, 시장 보며 검토"</h3>
+        <p>이억원 금융위원장은 지난 8일 국회 정무위원회 국정감사에서 은행권 주택담보대출의 위험가중치를 더 올리는 방안을 시장 상황을 보며 검토하겠다고 답했습니다. 위험가중치 하한은 올해 초 15%에서 20%로 올랐고, 국감에서는 25%로 올리는 안이 거론됐습니다. 가계대출 증가율 목표가 4월 1.5%에서 8월 3%로 바뀐 것을 두고 오락가락한다는 비판도 나왔는데, 위원장은 가계부채 수준이 높아 총량관리는 필요하다고 답했습니다. 위험가중치가 오르면 은행이 같은 주담대를 내줄 때 더 많은 자본을 쌓아야 해서 대출 문턱과 금리에 영향을 줄 수 있습니다.</p>
+        <div class="figs">
+          <span class="fig">위험가중치 하한 <b>15% → 20%</b></span>
+        </div>
+      </article>
+
+    </div>
+
+    <ul class="briefs">
+      <li><span class="tag">환율</span><span>원/달러 환율은 전 거래일보다 6.8원 내린 1338.3원에 마감했습니다. 연준 긴축 우려가 누그러지고 수출업체 달러 매도가 나온 영향으로 전해집니다.</span></li>
+      <li><span class="tag">일정</span><span>15일에는 정무위원회가 캠코·주택금융공사·신용보증기금을 상대로 국정감사를 열고, 가계대출·금융시장 동향 발표도 예정돼 있습니다.</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>정부 지원사업</h2>
+      <span class="eyebrow">확인된 공고 없음</span>
+    </div>
+    <div class="policy">
+    </div>
+    <p class="note">오늘은 확인된 신규 공고가 없습니다. 이번 세션에서는 정책브리핑 등 원문 페이지에 접속할 수 없어 신청기간을 직접 확인하지 못했고, 검색 요약만으로는 신청기간을 싣지 않는다는 원칙에 따라 이 섹션을 비웁니다.</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>경제 지식 한 조각</h2>
+      <span class="eyebrow">오늘의 단어</span>
+    </div>
+    <div class="explainer">
+      <p class="rom">RISK WEIGHT</p>
+      <h3 class="term">위험가중치</h3>
+      <p class="body">은행은 대출이 떼일 경우에 대비해 자기 돈, 곧 자본을 일정 비율 이상 쌓아 두어야 합니다. 이때 대출을 모두 같은 무게로 보지 않고, 위험하다고 보는 대출에는 큰 가중치를, 안전하다고 보는 대출에는 작은 가중치를 곱해 '위험가중자산'을 계산합니다. 이 숫자가 클수록 은행이 쌓아야 할 자본도 늘어납니다.</p>
+      <p class="body">주택담보대출은 담보가 있어 비교적 안전하다고 보기 때문에 가중치 하한이 낮게 정해져 있습니다. 당국이 이 하한을 올리면 은행은 같은 금액을 빌려줘도 더 많은 자본이 필요해집니다. 은행으로서는 주담대의 수익성이 떨어지니 대출을 줄이거나 금리를 높일 유인이 생깁니다. 대출 한도를 직접 막지 않고도 가계대출을 조절하는 간접 수단인 셈입니다.</p>
+      <p class="sokey">그래서 오늘 —<br>금융위원장이 주담대 위험가중치 하한을 현재 20%에서 더 올리는 방안을 시장 상황을 보며 검토하겠다고 밝혔습니다. 실제로 오르면 은행의 주담대 취급 태도와 금리에 영향이 갈 수 있어 앞으로의 발표를 지켜볼 만합니다.</p>
+    </div>
+  </section>
+
+  <footer class="sources">
+    <span class="eyebrow">출처</span>
+    <ul>
+      <li><a href="https://www.newspim.com/news/view/20261014001192">[마감시황] 코스피, 장 초반 2%대 상승분 반납…6000선 턱걸이 — 뉴스핌</a></li>
+      <li><a href="https://www.ajunews.com/view/20261014155337987">[마감시황] 코스피, 6거래일 연속 하락…외국인 매도에 6000선 '턱걸이' — 아주경제</a></li>
+      <li><a href="https://www.lcnews.co.kr/news/articleView.html?idxno=209639">[마감시황] 코스피, 26.54포인트(-0.44%) 내린 6008.81 마감 — 라이센스뉴스</a></li>
+      <li><a href="https://www.m-i.kr/news/articleView.html?idxno=2005893">코스피 6000선 턱걸이... 외국인 매도에 0.44%↓ — 매일일보</a></li>
+      <li><a href="https://www.hanyangeconomy.com/news/articleView.html?idxno=10384">[마감시황] 코스피, 반등 시도 무산에 장 막판 급락…6000선 턱걸이 — 한양경제</a></li>
+      <li><a href="https://www.betanews.net/article/view/beta202610140168">코스피, 개인·외인 매도세에 약보합마감 — 베타뉴스</a></li>
+      <li><a href="https://www.fnnews.com/news/202610141540451756">원·달러 환율 6.8원 내린 1338.3원 — 파이낸셜뉴스</a></li>
+      <li><a href="https://m.sedaily.com/article/20101590">원·달러 환율, 하루 만에 하락 전환…1338.3원 마감 — 서울경제</a></li>
+      <li><a href="https://www.fnnews.com/news/202610081749158817">'대출 문턱 더 높아지나'...이억원 "은행 주담대 RWA 인상, 시장상황 고려해 검토" — 파이낸셜뉴스</a></li>
+      <li><a href="https://m.inews24.com/v/2013150">[2026 국감] '널뛰기' 대출총량 도마⋯이억원 "가계부채 높아 규제 필요" — 아이뉴스24</a></li>
+      <li><a href="https://www.newspim.com/news/view/20261008001274">이번주 국내 주요 금융일정(10.12~10.16) — 뉴스핌</a></li>
+    </ul>
+    <p class="colophon">
+      아침의 경제 · 매일 08:00 발행 · <a href="https://bhforlife311.github.io/econ-brief/archive.html">지난 호</a><br>
+      기사 요약과 해설은 원문을 바탕으로 재구성한 것입니다. 투자 판단의 근거로 삼지 마세요.
+    </p>
+  </footer>
+
+</div>
+</body>
+</html>
