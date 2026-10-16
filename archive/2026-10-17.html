@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="매일 아침 발행되는 한국 경제 브리핑. 시장 지표, 헤드라인 3건, 경제 용어 해설, 정부 지원사업 마감 일정.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#F2F5F3">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0E1614">
+<link rel="manifest" href="/econ-brief/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/econ-brief/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/econ-brief/icons/favicon-32.png">
+<meta name="apple-mobile-web-app-title" content="아침의 경제">
+<meta name="application-name" content="아침의 경제">
+<meta property="og:title" content="아침의 경제">
+<meta property="og:description" content="매일 아침 발행되는 한국 경제 브리핑. 시장 지표, 헤드라인 3건, 경제 용어 해설, 정부 지원사업 마감 일정.">
+<meta property="og:type" content="website">
+<title>아침의 경제</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap">
+
+<style>
+  :root{
+    --paper:#F2F5F3;
+    --card:#FBFCFB;
+    --ink:#141D1A;
+    --ink-2:#3D4B46;
+    --ink-3:#6E7C76;
+    --rule:#D5DEDA;
+    --rule-soft:#E4EAE7;
+    --accent:#0B5D4E;
+    --accent-soft:#E2EFEA;
+    --up:#C0322A;
+    --down:#1D5FA8;
+    --flag:#9A5A05;
+    --flag-soft:#F6ECDC;
+
+    --serif:"Gowun Batang","Nanum Myeongjo",Batang,serif;
+    --sans:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+    --num:"Pretendard Variable",Pretendard,"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#0E1614;
+      --card:#16211E;
+      --ink:#E7EEEA;
+      --ink-2:#B3C1BB;
+      --ink-3:#7E8D87;
+      --rule:#2A3733;
+      --rule-soft:#212C29;
+      --accent:#5CC3A7;
+      --accent-soft:#17302A;
+      --up:#F2726A;
+      --down:#77AEEA;
+      --flag:#E0A85A;
+      --flag-soft:#2C2417;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0E1614;
+    --card:#16211E;
+    --ink:#E7EEEA;
+    --ink-2:#B3C1BB;
+    --ink-3:#7E8D87;
+    --rule:#2A3733;
+    --rule-soft:#212C29;
+    --accent:#5CC3A7;
+    --accent-soft:#17302A;
+    --up:#F2726A;
+    --down:#77AEEA;
+    --flag:#E0A85A;
+    --flag-soft:#2C2417;
+  }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-weight:400;
+    line-height:1.72;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:41rem;margin:0 auto;padding:2.5rem 1.4rem 4rem}
+  @media (max-width:520px){.wrap{padding:1.75rem 1.1rem 3rem}}
+
+  a{color:inherit}
+  .eyebrow{
+    font-family:var(--num);
+    font-size:.68rem;
+    font-weight:500;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+  }
+
+  /* masthead */
+  .masthead{
+    display:flex;flex-direction:column;gap:.5rem;
+    padding-bottom:1.1rem;
+    border-bottom:2px solid var(--ink);
+  }
+  .masthead h1{
+    font-family:var(--serif);
+    font-weight:700;
+    font-size:clamp(2.1rem,9vw,2.9rem);
+    letter-spacing:-.01em;
+    line-height:1.1;
+    margin:0;
+    text-wrap:balance;
+  }
+  .masthead-meta{
+    display:flex;flex-wrap:wrap;gap:.5rem .9rem;
+    align-items:baseline;
+    font-family:var(--num);
+    font-size:.73rem;
+    color:var(--ink-3);
+    letter-spacing:.04em;
+  }
+  .masthead-meta .dot{color:var(--rule)}
+  .standfirst{
+    margin:.9rem 0 0;
+    font-size:.95rem;
+    color:var(--ink-2);
+    line-height:1.65;
+  }
+
+  /* sections */
+  section{margin-top:2.9rem}
+  .sec-head{
+    display:flex;align-items:baseline;gap:.75rem;
+    padding-bottom:.5rem;
+    border-bottom:1px solid var(--rule);
+    margin-bottom:1.4rem;
+  }
+  .sec-head h2{
+    font-family:var(--serif);
+    font-weight:700;
+    font-size:1.32rem;
+    margin:0;
+    letter-spacing:-.005em;
+  }
+  .sec-head .eyebrow{margin-left:auto;white-space:nowrap}
+
+  /* market strip */
+  .ticks{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:1px;
+    background:var(--rule-soft);
+    border:1px solid var(--rule-soft);
+    border-radius:2px;
+    overflow:hidden;
+  }
+  @media (min-width:560px){.ticks{grid-template-columns:repeat(4,1fr)}}
+  .tick{
+    background:var(--card);
+    padding:.8rem .85rem .9rem;
+    display:flex;flex-direction:column;gap:.15rem;
+  }
+  .tick .name{
+    font-size:.75rem;
+    color:var(--ink-3);
+    letter-spacing:.02em;
+  }
+  .tick .val{
+    font-family:var(--num);
+    font-variant-numeric:tabular-nums;
+    font-size:1.14rem;
+    font-weight:600;
+    letter-spacing:-.02em;
+    line-height:1.3;
+  }
+  .tick .chg{
+    font-family:var(--num);
+    font-variant-numeric:tabular-nums;
+    font-size:.74rem;
+    font-weight:500;
+  }
+  .up{color:var(--up)}
+  .down{color:var(--down)}
+  .flat{color:var(--ink-3)}
+  .ticks-note{
+    margin:.55rem 0 0;
+    font-size:.78rem;
+    color:var(--ink-3);
+    line-height:1.6;
+  }
+
+  /* stories */
+  .stories{display:flex;flex-direction:column;gap:1.6rem}
+  .story{display:flex;flex-direction:column;gap:.35rem}
+  .story .kicker{
+    font-family:var(--num);
+    font-size:.68rem;
+    font-weight:600;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--accent);
+  }
+  .story h3{
+    font-family:var(--serif);
+    font-size:1.18rem;
+    font-weight:700;
+    line-height:1.42;
+    margin:0;
+    text-wrap:balance;
+  }
+  .story p{margin:.1rem 0 0;font-size:.94rem;color:var(--ink-2)}
+  .story .figs{
+    display:flex;flex-wrap:wrap;gap:.4rem;
+    margin-top:.45rem;
+  }
+  .fig{
+    font-family:var(--num);
+    font-variant-numeric:tabular-nums;
+    font-size:.72rem;
+    font-weight:500;
+    padding:.2rem .5rem;
+    border:1px solid var(--rule);
+    border-radius:2px;
+    color:var(--ink-2);
+    background:var(--card);
+    white-space:nowrap;
+  }
+  .fig b{color:var(--ink);font-weight:600}
+
+  .briefs{
+    list-style:none;margin:1.6rem 0 0;padding:1.1rem 0 0;
+    border-top:1px solid var(--rule-soft);
+    display:flex;flex-direction:column;gap:.6rem;
+  }
+  .briefs li{
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:.7rem;
+    font-size:.9rem;
+    color:var(--ink-2);
+  }
+  .briefs .tag{
+    font-family:var(--num);
+    font-size:.66rem;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+    padding-top:.28rem;
+    white-space:nowrap;
+  }
+
+  /* explainer */
+  .explainer{
+    background:var(--card);
+    border:1px solid var(--rule);
+    border-radius:3px;
+    padding:1.4rem 1.3rem;
+  }
+  .explainer .term{
+    font-family:var(--serif);
+    font-size:1.3rem;
+    font-weight:700;
+    margin:0 0 .1rem;
+  }
+  .explainer .rom{
+    font-family:var(--num);
+    font-size:.7rem;
+    letter-spacing:.08em;
+    color:var(--ink-3);
+    text-transform:uppercase;
+    margin:0;
+  }
+  .explainer p.body{font-size:.94rem;color:var(--ink-2);margin:.9rem 0 0}
+  .explainer p.body:first-of-type{margin-top:1rem}
+  .explainer .sokey{
+    margin:1.1rem 0 0;padding-top:.9rem;
+    border-top:1px dashed var(--rule);
+    font-size:.9rem;
+    color:var(--ink-2);
+  }
+  .explainer .sokey b{color:var(--accent);font-weight:600}
+
+  /* policy */
+  .policy{display:flex;flex-direction:column;gap:0}
+  .pol{
+    display:grid;
+    grid-template-columns:3.4rem 1fr;
+    gap:.9rem;
+    padding:.95rem 0;
+    border-bottom:1px solid var(--rule-soft);
+    align-items:start;
+  }
+  .pol:first-child{border-top:1px solid var(--rule-soft)}
+  .dday{
+    font-family:var(--num);
+    font-variant-numeric:tabular-nums;
+    font-size:.76rem;
+    font-weight:600;
+    text-align:center;
+    padding:.22rem 0;
+    border-radius:2px;
+    background:var(--accent-soft);
+    color:var(--accent);
+    letter-spacing:.02em;
+  }
+  .dday.urgent{background:var(--flag-soft);color:var(--flag)}
+  .dday.open{background:transparent;color:var(--ink-3);border:1px solid var(--rule)}
+  .pol .title{font-size:.95rem;font-weight:500;line-height:1.5}
+  .pol .meta{
+    font-size:.78rem;color:var(--ink-3);margin-top:.15rem;
+    font-family:var(--num);letter-spacing:.01em;
+  }
+  .note{
+    margin-top:1.1rem;
+    font-size:.85rem;
+    color:var(--ink-3);
+    line-height:1.6;
+    padding-left:.85rem;
+    border-left:2px solid var(--rule);
+  }
+
+  /* sources */
+  .sources{margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--rule)}
+  .sources ul{
+    list-style:none;margin:.9rem 0 0;padding:0;
+    display:flex;flex-direction:column;gap:.45rem;
+    font-size:.82rem;
+  }
+  .sources a{
+    color:var(--ink-2);
+    text-decoration:none;
+    border-bottom:1px solid var(--rule);
+    padding-bottom:1px;
+  }
+  .sources a:hover,.sources a:focus-visible{color:var(--accent);border-color:var(--accent)}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  .colophon{
+    margin-top:2.2rem;
+    font-family:var(--num);
+    font-size:.7rem;
+    letter-spacing:.06em;
+    color:var(--ink-3);
+    line-height:1.8;
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="masthead-meta">
+      <span>2026.10.17 토</span>
+      <span class="dot">/</span>
+      <span>제 37 호</span>
+      <span class="dot">/</span>
+      <span>08:00 KST</span>
+    </div>
+    <h1>아침의 경제</h1>
+    <p class="standfirst">오늘 아침 챙길 것 — 8거래일 만에 반등해 5668로 마감한 코스피와 4.46% 오른 코스닥, 2년여 만에 가장 낮은 1331원대로 내려온 원/달러 환율, 외국인의 순매수 전환, 수도권 공적주택 10만 가구 공급 계획입니다.</p>
+  </header>
+
+  <section>
+    <div class="sec-head">
+      <h2>시장</h2>
+      <span class="eyebrow">10월 16일(금) 종가</span>
+    </div>
+    <div class="ticks">
+      <div class="tick">
+        <span class="name">코스피</span>
+        <span class="val">5,668.05</span>
+        <span class="chg up">▲ 113.83 &nbsp;+2.05%</span>
+      </div>
+      <div class="tick">
+        <span class="name">코스닥</span>
+        <span class="val">794.78</span>
+        <span class="chg up">▲ 33.96 &nbsp;+4.46%</span>
+      </div>
+      <div class="tick">
+        <span class="name">원/달러</span>
+        <span class="val">1,331.4</span>
+        <span class="chg down">▼ 13.2 &nbsp;-0.98%</span>
+      </div>
+    </div>
+    <p class="ticks-note">한국거래소·서울 외환시장 마감 기준입니다. 오늘은 토요일이라 어제(금) 종가를 실었습니다.</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 헤드라인</h2>
+      <span class="eyebrow">4건</span>
+    </div>
+
+    <div class="stories">
+
+      <article class="story">
+        <span class="kicker">증시</span>
+        <h3>코스피 8거래일 만에 반등, 5668 마감</h3>
+        <p>16일 코스피는 전날보다 113.83포인트 오른 5668.05로 마감해 8거래일 만에 하락을 멈췄습니다. 장중에는 5809.94까지 올랐지만 오후 들어 상승폭이 줄었습니다. 코스닥은 4.46% 올라 794.78로 마쳤고, 코스닥150 선물과 현물이 급등하면서 매수 사이드카가 발동됐습니다. 전날 두 시장에 서킷브레이커가 걸릴 만큼 급락한 뒤여서 저가 매수세가 들어온 것으로 풀이됩니다. 다만 이번 주 코스피 하락률은 14%대여서 낙폭을 되돌렸다고 보기는 어렵습니다.</p>
+        <div class="figs">
+          <span class="fig">코스피 <b>+2.05%</b></span>
+          <span class="fig">코스닥 <b>+4.46%</b></span>
+          <span class="fig">반등 <b>8거래일 만</b></span>
+        </div>
+      </article>
+
+      <article class="story">
+        <span class="kicker">수급</span>
+        <h3>외국인 순매수 전환, 반등이 이어질지는 불투명</h3>
+        <p>외국인은 코스피에서 3430억원어치를 순매수했습니다. 이달 2일부터 이어진 연속 순매도가 끊긴 것입니다. 반대로 개인은 4847억원, 기관은 6834억원을 팔았습니다. 전날 폭락 때 사들인 물량을 일부 차익 실현한 모양새입니다. 일부 분석은 전날 낙폭에 비해 반등 강도가 약하고 외국인 매수가 하루로 끝날 수 있어, 추세 전환으로 단정하기는 이르다고 봅니다. 순매수가 며칠 더 이어지는지가 관건입니다.</p>
+        <div class="figs">
+          <span class="fig">외국인 <b>+3,430억원</b></span>
+          <span class="fig">개인 <b>-4,847억원</b></span>
+          <span class="fig">기관 <b>-6,834억원</b></span>
+        </div>
+      </article>
+
+      <article class="story">
+        <span class="kicker">환율</span>
+        <h3>원/달러 환율 1331.4원, 2년여 만의 최저</h3>
+        <p>서울 외환시장에서 원/달러 환율은 전날보다 13.2원 내린 1331.4원에 마감했습니다. 2년여 만에 가장 낮은 수준입니다. 달러 약세가 이어졌고 국내 증시가 반등하면서 외국인 자금이 돌아온 점이 환율을 눌렀다는 설명입니다. 환율이 내리면 수입 물가와 해외여행 비용 부담이 줄지만, 수출 기업에는 원화 환산 수익이 줄어드는 요인이 됩니다.</p>
+        <div class="figs">
+          <span class="fig">환율 <b>1,331.4원</b></span>
+          <span class="fig">전일 대비 <b>-13.2원</b></span>
+        </div>
+      </article>
+
+      <article class="story">
+        <span class="kicker">부동산</span>
+        <h3>국토부 "수도권 공적주택 10만 가구 입주 추진", 추가 대출 규제는 없다</h3>
+        <p>국토교통부는 16일 주택공급 정책브리프를 내놓고 올해 4분기부터 내년 말까지 수도권 공적주택 10만 가구의 입주를 추진한다고 밝혔습니다. 전세에서 월세로 옮겨 가는 흐름을 완충하기 위해 전월세 안심신탁도 연내 도입을 추진하겠다는 계획입니다. 국토부는 첫 정례브리핑에서 추가 대출 규제는 없다고 선을 그었습니다. 10·15 대책 1년을 맞아 서울 아파트 전셋값이 1년 새 10% 넘게 올랐다는 분석이 나오는 가운데, 공급 확대로 전월세 불안을 달래겠다는 취지입니다.</p>
+      </article>
+
+    </div>
+
+    <ul class="briefs">
+      <li><span class="tag">증시</span><span>코스닥 시장에 매수 사이드카가 발동돼 5분간 프로그램 매수호가 효력이 정지됐습니다.</span></li>
+      <li><span class="tag">전망</span><span>전날 급락 폭에 비해 반등 강도가 약하다는 신중론이 나옵니다.</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>정부 지원사업</h2>
+      <span class="eyebrow">확인된 공고 없음</span>
+    </div>
+    <div class="policy">
+    </div>
+    <p class="note">오늘은 확인된 신규 공고가 없습니다. 원문 페이지에 접속할 수 없어 신청기간을 직접 확인하지 못했고, 검색 요약만으로는 신청기간을 싣지 않는다는 원칙에 따라 이 섹션을 비웁니다.</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>경제 지식 한 조각</h2>
+      <span class="eyebrow">오늘의 단어</span>
+    </div>
+    <div class="explainer">
+      <p class="rom">SIDECAR</p>
+      <h3 class="term">사이드카</h3>
+      <p class="body">선물 시장이 급하게 움직일 때 현물 시장의 프로그램 매매를 잠깐 멈추는 장치입니다. 거래 전체를 세우는 서킷브레이커와 달리, 컴퓨터가 자동으로 내는 주문만 5분간 막습니다. 오토바이 옆에 다는 보조 좌석처럼, 본체인 선물 시장이 날뛸 때 현물 시장이 함께 휩쓸리지 않도록 곁에서 속도를 늦춰 준다는 뜻에서 붙은 이름입니다.</p>
+      <p class="body">선물 가격과 현물 지수가 각각 일정 비율 이상 움직이고 그 상태가 1분 이상 이어지면 발동됩니다. 오르는 쪽이면 매수 사이드카, 내리는 쪽이면 매도 사이드카입니다. 하루에 한 번만 걸 수 있고, 장 마감 40분 전 이후에는 발동하지 않습니다. 5분이 지나면 효력은 저절로 풀립니다.</p>
+      <p class="sokey"><b>그래서 오늘 —</b><br>전날 폭락 때는 매도 쪽에서, 오늘은 반대로 코스닥이 4% 넘게 뛰며 매수 사이드카가 발동됐습니다. 사이드카는 방향과 상관없이 쏠림을 식히는 장치라는 점에서, 급락 뒤 급반등도 시장이 그만큼 불안정하다는 신호로 읽힙니다.</p>
+    </div>
+  </section>
+
+  <footer class="sources">
+    <span class="eyebrow">출처</span>
+    <ul>
+      <li><a href="https://www.mediafine.co.kr/news/articleView.html?idxno=92827">코스피, 8거래일 만에 반등…2.05% 오른 5,668선 마감 — 미디어파인</a></li>
+      <li><a href="https://www.hankyung.com/article/2026101668146">외국인 8거래일 만에 사자…코스피, 2% 상승해 5600선 마감 — 한국경제</a></li>
+      <li><a href="https://www.khan.co.kr/article/202610161701001">폭락하던 코스피, 그래도 2% 반등···외국인 8거래일 만에 ‘사자’ — 경향신문</a></li>
+      <li><a href="https://www.news1.kr/finance/general-stock/6322712">'외인 매수 전환' 코스피 2%대 반등…코스닥 4%대 급등 — 뉴스1</a></li>
+      <li><a href="https://www.sentv.co.kr/article/view/sentv202610160187">코스피, 8거래일 만에 상승 마감…외국인 순매수 전환 — SEN</a></li>
+      <li><a href="https://m.sedaily.com/article/20102671">8거래일만에 오른 코스피…추세 상승일까 일시 반등일까 — 서울경제</a></li>
+      <li><a href="https://betanews.net/article/view/beta202610160138">'달러 약세·주가 반등'...원·달러 환율, 1331.4원 마감 '2년여 만에 최저' — 베타뉴스</a></li>
+      <li><a href="https://www.dailian.co.kr/news/view/1701957/%E2%80%9C%EB%8C%80%EC%B6%9C-%EC%A1%B0%EC%9D%B4%EA%B3%A0-%EA%B1%B0%EB%9E%98-%EB%AC%B6%EC%97%88%EC%A7%80%EB%A7%8C1015-2026">“대출 조이고 거래 묶었지만”…10·15 대책 1년, 집값 어디로 — 데일리안</a></li>
+      <li><a href="https://supple.kr/news/cmvamg15y00c8bmujov6cam8h">"전세의 월세화 완충 필요"…정부, 내년 말까지 수도권 공적주택 10만가구 입주 — 서플</a></li>
+    </ul>
+    <p class="colophon">
+      아침의 경제 · 매일 08:00 발행 · <a href="https://bhforlife311.github.io/econ-brief/archive.html">지난 호</a><br>
+      기사 요약과 해설은 원문을 바탕으로 재구성한 것입니다. 투자 판단의 근거로 삼지 마세요.
+    </p>
+  </footer>
+</div>
+</body>
+</html>
