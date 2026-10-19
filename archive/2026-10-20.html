@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="매일 아침 발행되는 한국 경제 브리핑. 시장 지표, 헤드라인 3건, 경제 용어 해설, 정부 지원사업 마감 일정.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#F2F5F3">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0E1614">
+<link rel="manifest" href="/econ-brief/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/econ-brief/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/econ-brief/icons/favicon-32.png">
+<meta name="apple-mobile-web-app-title" content="아침의 경제">
+<meta name="application-name" content="아침의 경제">
+<meta property="og:title" content="아침의 경제">
+<meta property="og:description" content="매일 아침 발행되는 한국 경제 브리핑. 시장 지표, 헤드라인 3건, 경제 용어 해설, 정부 지원사업 마감 일정.">
+<meta property="og:type" content="website">
+<title>아침의 경제</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap">
+
+<style>
+  :root{
+    --paper:#F2F5F3;
+    --card:#FBFCFB;
+    --ink:#141D1A;
+    --ink-2:#3D4B46;
+    --ink-3:#6E7C76;
+    --rule:#D5DEDA;
+    --rule-soft:#E4EAE7;
+    --accent:#0B5D4E;
+    --accent-soft:#E2EFEA;
+    --up:#C0322A;
+    --down:#1D5FA8;
+    --flag:#9A5A05;
+    --flag-soft:#F6ECDC;
+
+    --serif:"Gowun Batang","Nanum Myeongjo",Batang,serif;
+    --sans:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+    --num:"Pretendard Variable",Pretendard,"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#0E1614;
+      --card:#16211E;
+      --ink:#E7EEEA;
+      --ink-2:#B3C1BB;
+      --ink-3:#7E8D87;
+      --rule:#2A3733;
+      --rule-soft:#212C29;
+      --accent:#5CC3A7;
+      --accent-soft:#17302A;
+      --up:#F2726A;
+      --down:#77AEEA;
+      --flag:#E0A85A;
+      --flag-soft:#2C2417;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0E1614;
+    --card:#16211E;
+    --ink:#E7EEEA;
+    --ink-2:#B3C1BB;
+    --ink-3:#7E8D87;
+    --rule:#2A3733;
+    --rule-soft:#212C29;
+    --accent:#5CC3A7;
+    --accent-soft:#17302A;
+    --up:#F2726A;
+    --down:#77AEEA;
+    --flag:#E0A85A;
+    --flag-soft:#2C2417;
+  }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-weight:400;
+    line-height:1.72;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:41rem;margin:0 auto;padding:2.5rem 1.4rem 4rem}
+  @media (max-width:520px){.wrap{padding:1.75rem 1.1rem 3rem}}
+
+  a{color:inherit}
+  .eyebrow{
+    font-family:var(--num);
+    font-size:.68rem;
+    font-weight:500;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+  }
+
+  /* masthead */
+  .masthead{
+    display:flex;flex-direction:column;gap:.5rem;
+    padding-bottom:1.1rem;
+    border-bottom:2px solid var(--ink);
+  }
+  .masthead h1{
+    font-family:var(--serif);
+    font-weight:700;
+    font-size:clamp(2.1rem,9vw,2.9rem);
+    letter-spacing:-.01em;
+    line-height:1.1;
+    margin:0;
+    text-wrap:balance;
+  }
+  .masthead-meta{
+    display:flex;flex-wrap:wrap;gap:.5rem .9rem;
+    align-items:baseline;
+    font-family:var(--num);
+    font-size:.73rem;
+    color:var(--ink-3);
+    letter-spacing:.04em;
+  }
+  .masthead-meta .dot{color:var(--rule)}
+  .standfirst{
+    margin:.9rem 0 0;
+    font-size:.95rem;
+    color:var(--ink-2);
+    line-height:1.65;
+  }
+
+  /* sections */
+  section{margin-top:2.9rem}
+  .sec-head{
+    display:flex;align-items:baseline;gap:.75rem;
+    padding-bottom:.5rem;
+    border-bottom:1px solid var(--rule);
+    margin-bottom:1.4rem;
+  }
+  .sec-head h2{
+    font-family:var(--serif);
+    font-weight:700;
+    font-size:1.32rem;
+    margin:0;
+    letter-spacing:-.005em;
+  }
+  .sec-head .eyebrow{margin-left:auto;white-space:nowrap}
+
+  /* market strip */
+  .ticks{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:1px;
+    background:var(--rule-soft);
+    border:1px solid var(--rule-soft);
+    border-radius:2px;
+    overflow:hidden;
+  }
+  @media (min-width:560px){.ticks{grid-template-columns:repeat(4,1fr)}}
+  .tick{
+    background:var(--card);
+    padding:.8rem .85rem .9rem;
+    display:flex;flex-direction:column;gap:.15rem;
+  }
+  .tick .name{
+    font-size:.75rem;
+    color:var(--ink-3);
+    letter-spacing:.02em;
+  }
+  .tick .val{
+    font-family:var(--num);
+    font-variant-numeric:tabular-nums;
+    font-size:1.14rem;
+    font-weight:600;
+    letter-spacing:-.02em;
+    line-height:1.3;
+  }
+  .tick .chg{
+    font-family:var(--num);
+    font-variant-numeric:tabular-nums;
+    font-size:.74rem;
+    font-weight:500;
+  }
+  .up{color:var(--up)}
+  .down{color:var(--down)}
+  .flat{color:var(--ink-3)}
+  .ticks-note{
+    margin:.55rem 0 0;
+    font-size:.78rem;
+    color:var(--ink-3);
+    line-height:1.6;
+  }
+
+  /* stories */
+  .stories{display:flex;flex-direction:column;gap:1.6rem}
+  .story{display:flex;flex-direction:column;gap:.35rem}
+  .story .kicker{
+    font-family:var(--num);
+    font-size:.68rem;
+    font-weight:600;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--accent);
+  }
+  .story h3{
+    font-family:var(--serif);
+    font-size:1.18rem;
+    font-weight:700;
+    line-height:1.42;
+    margin:0;
+    text-wrap:balance;
+  }
+  .story p{margin:.1rem 0 0;font-size:.94rem;color:var(--ink-2)}
+  .story .figs{
+    display:flex;flex-wrap:wrap;gap:.4rem;
+    margin-top:.45rem;
+  }
+  .fig{
+    font-family:var(--num);
+    font-variant-numeric:tabular-nums;
+    font-size:.72rem;
+    font-weight:500;
+    padding:.2rem .5rem;
+    border:1px solid var(--rule);
+    border-radius:2px;
+    color:var(--ink-2);
+    background:var(--card);
+    white-space:nowrap;
+  }
+  .fig b{color:var(--ink);font-weight:600}
+
+  .briefs{
+    list-style:none;margin:1.6rem 0 0;padding:1.1rem 0 0;
+    border-top:1px solid var(--rule-soft);
+    display:flex;flex-direction:column;gap:.6rem;
+  }
+  .briefs li{
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:.7rem;
+    font-size:.9rem;
+    color:var(--ink-2);
+  }
+  .briefs .tag{
+    font-family:var(--num);
+    font-size:.66rem;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+    padding-top:.28rem;
+    white-space:nowrap;
+  }
+
+  /* explainer */
+  .explainer{
+    background:var(--card);
+    border:1px solid var(--rule);
+    border-radius:3px;
+    padding:1.4rem 1.3rem;
+  }
+  .explainer .term{
+    font-family:var(--serif);
+    font-size:1.3rem;
+    font-weight:700;
+    margin:0 0 .1rem;
+  }
+  .explainer .rom{
+    font-family:var(--num);
+    font-size:.7rem;
+    letter-spacing:.08em;
+    color:var(--ink-3);
+    text-transform:uppercase;
+    margin:0;
+  }
+  .explainer p.body{font-size:.94rem;color:var(--ink-2);margin:.9rem 0 0}
+  .explainer p.body:first-of-type{margin-top:1rem}
+  .explainer .sokey{
+    margin:1.1rem 0 0;padding-top:.9rem;
+    border-top:1px dashed var(--rule);
+    font-size:.9rem;
+    color:var(--ink-2);
+  }
+  .explainer .sokey b{color:var(--accent);font-weight:600}
+
+  /* policy */
+  .policy{display:flex;flex-direction:column;gap:0}
+  .pol{
+    display:grid;
+    grid-template-columns:3.4rem 1fr;
+    gap:.9rem;
+    padding:.95rem 0;
+    border-bottom:1px solid var(--rule-soft);
+    align-items:start;
+  }
+  .pol:first-child{border-top:1px solid var(--rule-soft)}
+  .dday{
+    font-family:var(--num);
+    font-variant-numeric:tabular-nums;
+    font-size:.76rem;
+    font-weight:600;
+    text-align:center;
+    padding:.22rem 0;
+    border-radius:2px;
+    background:var(--accent-soft);
+    color:var(--accent);
+    letter-spacing:.02em;
+  }
+  .dday.urgent{background:var(--flag-soft);color:var(--flag)}
+  .dday.open{background:transparent;color:var(--ink-3);border:1px solid var(--rule)}
+  .pol .title{font-size:.95rem;font-weight:500;line-height:1.5}
+  .pol .meta{
+    font-size:.78rem;color:var(--ink-3);margin-top:.15rem;
+    font-family:var(--num);letter-spacing:.01em;
+  }
+  .note{
+    margin-top:1.1rem;
+    font-size:.85rem;
+    color:var(--ink-3);
+    line-height:1.6;
+    padding-left:.85rem;
+    border-left:2px solid var(--rule);
+  }
+
+  /* sources */
+  .sources{margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--rule)}
+  .sources ul{
+    list-style:none;margin:.9rem 0 0;padding:0;
+    display:flex;flex-direction:column;gap:.45rem;
+    font-size:.82rem;
+  }
+  .sources a{
+    color:var(--ink-2);
+    text-decoration:none;
+    border-bottom:1px solid var(--rule);
+    padding-bottom:1px;
+  }
+  .sources a:hover,.sources a:focus-visible{color:var(--accent);border-color:var(--accent)}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  .colophon{
+    margin-top:2.2rem;
+    font-family:var(--num);
+    font-size:.7rem;
+    letter-spacing:.06em;
+    color:var(--ink-3);
+    line-height:1.8;
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="masthead-meta">
+      <span>2026.10.20 화</span>
+      <span class="dot">/</span>
+      <span>제 39 호</span>
+      <span class="dot">/</span>
+      <span>08:00 KST</span>
+    </div>
+    <h1>아침의 경제</h1>
+    <p class="standfirst">코스피는 장 초반 3% 넘게 밀렸다가 1.76% 오른 5,768에 마감했고, 10·15 대책 1년 만에 서울 전셋값은 10% 넘게 올랐습니다. 9월 가계대출은 9개월 만에 감소했으며, 22일 금융통화위원회를 앞두고 시장은 한은의 신호를 기다립니다.</p>
+  </header>
+
+  <section>
+    <div class="sec-head">
+      <h2>시장</h2>
+      <span class="eyebrow">10월 19일(월) 종가</span>
+    </div>
+    <div class="ticks">
+      <div class="tick">
+        <span class="name">코스피</span>
+        <span class="val">5,768.01</span>
+        <span class="chg up">▲ 99.96 &nbsp;+1.76%</span>
+      </div>
+      <div class="tick">
+        <span class="name">코스닥</span>
+        <span class="val">808.89</span>
+        <span class="chg up">▲ 14.11 &nbsp;+1.78%</span>
+      </div>
+      <div class="tick">
+        <span class="name">원/달러</span>
+        <span class="val">1,330.3</span>
+        <span class="chg down">▼ 1.1 &nbsp;-0.08%</span>
+      </div>
+    </div>
+    <p class="ticks-note">한국거래소·서울 외환시장 마감 기준입니다. 코스닥과 환율의 등락은 직전 호의 종가와 비교해 계산했습니다.</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 헤드라인</h2>
+      <span class="eyebrow">4건</span>
+    </div>
+
+    <div class="stories">
+
+      <article class="story">
+        <span class="kicker">증시</span>
+        <h3>코스피, 장 초반 3% 급락 딛고 반등 마감</h3>
+        <p>어제 코스피는 개장 직후 5488선까지 3.17% 밀렸다가 낙폭을 모두 만회하고 5,768.01에 마감했습니다. 지난주 큰 폭으로 떨어진 데 따른 저가 매수가 들어왔고, 외국인 매도세도 누그러졌습니다. 기관이 5700억원 넘게 순매수하며 지수를 받쳤습니다. 다만 반도체 업종은 여전히 부진해 반등의 폭이 업종별로 고르지 않았습니다. 시장은 미국 반도체주의 반등이 오늘 국내 증시로 이어질지, 외국인이 돌아올지를 지켜보고 있습니다.</p>
+        <div class="figs">
+          <span class="fig">장중 최대 낙폭 <b>-3.17%</b></span>
+          <span class="fig">마감 <b>+1.76%</b></span>
+        </div>
+      </article>
+
+      <article class="story">
+        <span class="kicker">부동산</span>
+        <h3>10·15 대책 1년, 서울 전셋값 10% 넘게 올랐다</h3>
+        <p>대출 규제와 토지거래허가구역 확대를 담은 10·15 대책이 나온 지 1년이 지났습니다. 최근 52주 동안 서울 아파트 전셋값은 10.31% 올라 그 전 1년의 2.41%보다 크게 빨라졌습니다. 성북구와 노원구 같은 외곽 지역의 오름폭이 특히 컸습니다. 전세 매물은 1년 새 17% 가까이 줄었고, 서울 아파트 임대차 거래 가운데 월세 비중은 올해 들어 50%를 넘었습니다. 수요를 누르려던 규제가 매매 대신 임대차 시장의 부담으로 번졌다는 평가가 나옵니다. 한편 국토교통부 차관은 추가 대출 규제는 현재 검토하는 것이 없다고 밝혔습니다.</p>
+        <div class="figs">
+          <span class="fig">서울 전셋값 52주 <b>+10.31%</b></span>
+          <span class="fig">월세 비중 <b>50.9%</b></span>
+        </div>
+      </article>
+
+      <article class="story">
+        <span class="kicker">가계</span>
+        <h3>9월 가계대출 2.2조원 감소, 9개월 만에 줄었다</h3>
+        <p>금융위원회에 따르면 9월 전 금융권 가계대출은 2.2조원 줄었습니다. 지난해 12월 이후 처음 감소로 돌아선 것입니다. 주택담보대출은 3.3조원 늘었지만 증가폭이 작아졌고, 신용대출 등 기타대출이 5.5조원 줄었습니다. 은행권은 0.6조원 늘고 제2금융권은 2.8조원 줄었습니다. 당국은 주택 거래량과 입주 물량이 줄고 분기 말 부실채권 상각이 겹친 영향으로 보면서, 하반기 위험 요인을 고려해 총량 관리를 이어가겠다는 입장입니다.</p>
+        <div class="figs">
+          <span class="fig">9월 가계대출 <b>-2.2조원</b></span>
+          <span class="fig">8월 <b>+2.8조원</b></span>
+        </div>
+      </article>
+
+      <article class="story">
+        <span class="kicker">금리</span>
+        <h3>금통위 D-2, 점도표가 가리킨 경로에 시선</h3>
+        <p>한국은행 금융통화위원회가 22일 기준금리를 정합니다. 현재 금리는 연 3.00%이고, 시장에서는 동결을 예상하는 쪽이 우세합니다. 8월 회의에서는 6개월 뒤 금리 전망을 보여 주는 점도표에서 21개 점 가운데 10개가 3.25%에 몰렸습니다. 이번에도 결정 자체보다 위원들의 향후 경로 신호가 채권시장의 변수가 될 전망입니다.</p>
+        <div class="figs">
+          <span class="fig">기준금리 <b>3.00%</b></span>
+          <span class="fig">8월 점도표 <b>3.25% 10표</b></span>
+        </div>
+      </article>
+
+    </div>
+
+    <ul class="briefs">
+      <li><span class="tag">일정</span><span>22일 한국은행 금통위가 열립니다.</span></li>
+      <li><span class="tag">국감</span><span>국회 재정경제기획위원회 종합감사가 22일과 23일 열립니다.</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>정부 지원사업</h2>
+      <span class="eyebrow">확인된 공고 없음</span>
+    </div>
+    <div class="policy">
+    </div>
+    <p class="note">오늘은 확인된 신규 공고가 없습니다. 원문 페이지에 접속할 수 없어 신청기간을 직접 확인하지 못했고, 검색 요약만으로는 신청기간을 싣지 않는다는 원칙에 따라 이 섹션을 비웁니다.</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>경제 지식 한 조각</h2>
+      <span class="eyebrow">오늘의 단어</span>
+    </div>
+    <div class="explainer">
+      <p class="rom">LAND TRANSACTION PERMIT ZONE</p>
+      <h3 class="term">토지거래허가구역</h3>
+      <p class="body">집값이 급히 오르거나 오를 우려가 큰 지역을 지자체가 지정하는 구역입니다. 이 구역에서 일정 면적 이상의 땅이나 집을 사려면 시·군·구청의 허가를 먼저 받아야 합니다. 보통 실제 거주나 영농 같은 실수요 목적이어야 허가가 나고, 허가받은 뒤에도 일정 기간 그 목적대로 써야 합니다.</p>
+      <p class="body">투기성 매수를 걸러 내는 데 목적이 있지만 부작용도 따릅니다. 거래가 묶이면 매물이 줄고, 집을 살 수 없게 된 수요가 임대차 시장으로 옮겨 가 전월세 가격을 밀어 올리기도 합니다. 규제 구역 안팎의 가격 격차가 벌어지는 일도 흔합니다.</p>
+      <p class="sokey"><b>그래서 오늘 —</b><br>10·15 대책 1년을 짚은 기사들은 서울 전셋값이 10% 넘게 오르고 월세 비중이 절반을 넘었다고 전합니다. 거래를 묶은 규제가 임대차 시장에 어떤 영향을 남겼는지 보여 주는 숫자입니다.</p>
+    </div>
+  </section>
+
+  <footer class="sources">
+    <span class="eyebrow">출처</span>
+    <ul>
+      <li><a href="https://www.newspim.com/news/view/20261019001237">[마감시황] 외국인 매도세 완화…코스피, 장 초반 3% 급락 딛고 1.8% 상승 마감 — 뉴스핌</a></li>
+      <li><a href="https://www.kdfnews.com/news/articleView.html?idxno=189533">코스피, 3%대 하락 딛고 5768선… 원·달러 환율 1330.3원 — 한국면세뉴스</a></li>
+      <li><a href="https://www.alphabiz.co.kr/news/articleView.html?idxno=193305">[마감] 코스피, 기관 저가 매수에 1.76% 상승…낙폭 지우고 고점 마감 — 알파경제</a></li>
+      <li><a href="https://newstomato.com/ReadNews.aspx?no=1316960">10·15 대책 1년…집값 오르고 전세난까지 — 뉴스토마토</a></li>
+      <li><a href="https://www.dailian.co.kr/news/view/1701957/%E2%80%9C%EB%8C%80%EC%B6%9C-%EC%A1%B0%EC%9D%B4%EA%B3%A0-%EA%B1%B0%EB%9E%98-%EB%AC%B6%EC%97%88%EC%A7%80%EB%A7%8C1015-2026">“대출 조이고 거래 묶었지만”…10·15 대책 1년, 집값 어디로 — 데일리안</a></li>
+      <li><a href="https://www.fnnews.com/news/202610161601336163">국토 차관 "착공 증가, 좋은 시그널"…추가 대출규제 선 그어 — 파이낸셜뉴스</a></li>
+      <li><a href="https://news.mtn.co.kr/article/2026101513252932708">9월 가계대출 동향 — 머니투데이방송</a></li>
+      <li><a href="https://www.fnnews.com/news/202608271635254071">8월 금통위 점도표 관련 보도 — 파이낸셜뉴스</a></li>
+    </ul>
+    <p class="colophon">
+      아침의 경제 · 매일 08:00 발행 · <a href="https://bhforlife311.github.io/econ-brief/archive.html">지난 호</a><br>
+      기사 요약과 해설은 원문을 바탕으로 재구성한 것입니다. 투자 판단의 근거로 삼지 마세요.
+    </p>
+  </footer>
+</div>
+</body>
+</html>
