@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="매일 아침 발행되는 한국 경제 브리핑. 시장 지표, 헤드라인 3건, 경제 용어 해설, 정부 지원사업 마감 일정.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#F2F5F3">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0E1614">
+<link rel="manifest" href="/econ-brief/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/econ-brief/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/econ-brief/icons/favicon-32.png">
+<meta name="apple-mobile-web-app-title" content="아침의 경제">
+<meta name="application-name" content="아침의 경제">
+<meta property="og:title" content="아침의 경제">
+<meta property="og:description" content="매일 아침 발행되는 한국 경제 브리핑. 시장 지표, 헤드라인 3건, 경제 용어 해설, 정부 지원사업 마감 일정.">
+<meta property="og:type" content="website">
+<title>아침의 경제</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap">
+
+<style>
+  :root{
+    --paper:#F2F5F3;
+    --card:#FBFCFB;
+    --ink:#141D1A;
+    --ink-2:#3D4B46;
+    --ink-3:#6E7C76;
+    --rule:#D5DEDA;
+    --rule-soft:#E4EAE7;
+    --accent:#0B5D4E;
+    --accent-soft:#E2EFEA;
+    --up:#C0322A;
+    --down:#1D5FA8;
+    --flag:#9A5A05;
+    --flag-soft:#F6ECDC;
+
+    --serif:"Gowun Batang","Nanum Myeongjo",Batang,serif;
+    --sans:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+    --num:"Pretendard Variable",Pretendard,"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#0E1614;
+      --card:#16211E;
+      --ink:#E7EEEA;
+      --ink-2:#B3C1BB;
+      --ink-3:#7E8D87;
+      --rule:#2A3733;
+      --rule-soft:#212C29;
+      --accent:#5CC3A7;
+      --accent-soft:#17302A;
+      --up:#F2726A;
+      --down:#77AEEA;
+      --flag:#E0A85A;
+      --flag-soft:#2C2417;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0E1614;
+    --card:#16211E;
+    --ink:#E7EEEA;
+    --ink-2:#B3C1BB;
+    --ink-3:#7E8D87;
+    --rule:#2A3733;
+    --rule-soft:#212C29;
+    --accent:#5CC3A7;
+    --accent-soft:#17302A;
+    --up:#F2726A;
+    --down:#77AEEA;
+    --flag:#E0A85A;
+    --flag-soft:#2C2417;
+  }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-weight:400;
+    line-height:1.72;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:41rem;margin:0 auto;padding:2.5rem 1.4rem 4rem}
+  @media (max-width:520px){.wrap{padding:1.75rem 1.1rem 3rem}}
+
+  a{color:inherit}
+  .eyebrow{
+    font-family:var(--num);
+    font-size:.68rem;
+    font-weight:500;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+  }
+
+  /* masthead */
+  .masthead{
+    display:flex;flex-direction:column;gap:.5rem;
+    padding-bottom:1.1rem;
+    border-bottom:2px solid var(--ink);
+  }
+  .masthead h1{
+    font-family:var(--serif);
+    font-weight:700;
+    font-size:clamp(2.1rem,9vw,2.9rem);
+    letter-spacing:-.01em;
+    line-height:1.1;
+    margin:0;
+    text-wrap:balance;
+  }
+  .masthead-meta{
+    display:flex;flex-wrap:wrap;gap:.5rem .9rem;
+    align-items:baseline;
+    font-family:var(--num);
+    font-size:.73rem;
+    color:var(--ink-3);
+    letter-spacing:.04em;
+  }
+  .masthead-meta .dot{color:var(--rule)}
+  .standfirst{
+    margin:.9rem 0 0;
+    font-size:.95rem;
+    color:var(--ink-2);
+    line-height:1.65;
+  }
+
+  /* sections */
+  section{margin-top:2.9rem}
+  .sec-head{
+    display:flex;align-items:baseline;gap:.75rem;
+    padding-bottom:.5rem;
+    border-bottom:1px solid var(--rule);
+    margin-bottom:1.4rem;
+  }
+  .sec-head h2{
+    font-family:var(--serif);
+    font-weight:700;
+    font-size:1.32rem;
+    margin:0;
+    letter-spacing:-.005em;
+  }
+  .sec-head .eyebrow{margin-left:auto;white-space:nowrap}
+
+  /* market strip */
+  .ticks{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:1px;
+    background:var(--rule-soft);
+    border:1px solid var(--rule-soft);
+    border-radius:2px;
+    overflow:hidden;
+  }
+  @media (min-width:560px){.ticks{grid-template-columns:repeat(4,1fr)}}
+  .tick{
+    background:var(--card);
+    padding:.8rem .85rem .9rem;
+    display:flex;flex-direction:column;gap:.15rem;
+  }
+  .tick .name{
+    font-size:.75rem;
+    color:var(--ink-3);
+    letter-spacing:.02em;
+  }
+  .tick .val{
+    font-family:var(--num);
+    font-variant-numeric:tabular-nums;
+    font-size:1.14rem;
+    font-weight:600;
+    letter-spacing:-.02em;
+    line-height:1.3;
+  }
+  .tick .chg{
+    font-family:var(--num);
+    font-variant-numeric:tabular-nums;
+    font-size:.74rem;
+    font-weight:500;
+  }
+  .up{color:var(--up)}
+  .down{color:var(--down)}
+  .flat{color:var(--ink-3)}
+  .ticks-note{
+    margin:.55rem 0 0;
+    font-size:.78rem;
+    color:var(--ink-3);
+    line-height:1.6;
+  }
+
+  /* stories */
+  .stories{display:flex;flex-direction:column;gap:1.6rem}
+  .story{display:flex;flex-direction:column;gap:.35rem}
+  .story .kicker{
+    font-family:var(--num);
+    font-size:.68rem;
+    font-weight:600;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--accent);
+  }
+  .story h3{
+    font-family:var(--serif);
+    font-size:1.18rem;
+    font-weight:700;
+    line-height:1.42;
+    margin:0;
+    text-wrap:balance;
+  }
+  .story p{margin:.1rem 0 0;font-size:.94rem;color:var(--ink-2)}
+  .story .figs{
+    display:flex;flex-wrap:wrap;gap:.4rem;
+    margin-top:.45rem;
+  }
+  .fig{
+    font-family:var(--num);
+    font-variant-numeric:tabular-nums;
+    font-size:.72rem;
+    font-weight:500;
+    padding:.2rem .5rem;
+    border:1px solid var(--rule);
+    border-radius:2px;
+    color:var(--ink-2);
+    background:var(--card);
+    white-space:nowrap;
+  }
+  .fig b{color:var(--ink);font-weight:600}
+
+  .briefs{
+    list-style:none;margin:1.6rem 0 0;padding:1.1rem 0 0;
+    border-top:1px solid var(--rule-soft);
+    display:flex;flex-direction:column;gap:.6rem;
+  }
+  .briefs li{
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:.7rem;
+    font-size:.9rem;
+    color:var(--ink-2);
+  }
+  .briefs .tag{
+    font-family:var(--num);
+    font-size:.66rem;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+    padding-top:.28rem;
+    white-space:nowrap;
+  }
+
+  /* explainer */
+  .explainer{
+    background:var(--card);
+    border:1px solid var(--rule);
+    border-radius:3px;
+    padding:1.4rem 1.3rem;
+  }
+  .explainer .term{
+    font-family:var(--serif);
+    font-size:1.3rem;
+    font-weight:700;
+    margin:0 0 .1rem;
+  }
+  .explainer .rom{
+    font-family:var(--num);
+    font-size:.7rem;
+    letter-spacing:.08em;
+    color:var(--ink-3);
+    text-transform:uppercase;
+    margin:0;
+  }
+  .explainer p.body{font-size:.94rem;color:var(--ink-2);margin:.9rem 0 0}
+  .explainer p.body:first-of-type{margin-top:1rem}
+  .explainer .sokey{
+    margin:1.1rem 0 0;padding-top:.9rem;
+    border-top:1px dashed var(--rule);
+    font-size:.9rem;
+    color:var(--ink-2);
+  }
+  .explainer .sokey b{color:var(--accent);font-weight:600}
+
+  /* policy */
+  .policy{display:flex;flex-direction:column;gap:0}
+  .pol{
+    display:grid;
+    grid-template-columns:3.4rem 1fr;
+    gap:.9rem;
+    padding:.95rem 0;
+    border-bottom:1px solid var(--rule-soft);
+    align-items:start;
+  }
+  .pol:first-child{border-top:1px solid var(--rule-soft)}
+  .dday{
+    font-family:var(--num);
+    font-variant-numeric:tabular-nums;
+    font-size:.76rem;
+    font-weight:600;
+    text-align:center;
+    padding:.22rem 0;
+    border-radius:2px;
+    background:var(--accent-soft);
+    color:var(--accent);
+    letter-spacing:.02em;
+  }
+  .dday.urgent{background:var(--flag-soft);color:var(--flag)}
+  .dday.open{background:transparent;color:var(--ink-3);border:1px solid var(--rule)}
+  .pol .title{font-size:.95rem;font-weight:500;line-height:1.5}
+  .pol .meta{
+    font-size:.78rem;color:var(--ink-3);margin-top:.15rem;
+    font-family:var(--num);letter-spacing:.01em;
+  }
+  .note{
+    margin-top:1.1rem;
+    font-size:.85rem;
+    color:var(--ink-3);
+    line-height:1.6;
+    padding-left:.85rem;
+    border-left:2px solid var(--rule);
+  }
+
+  /* sources */
+  .sources{margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--rule)}
+  .sources ul{
+    list-style:none;margin:.9rem 0 0;padding:0;
+    display:flex;flex-direction:column;gap:.45rem;
+    font-size:.82rem;
+  }
+  .sources a{
+    color:var(--ink-2);
+    text-decoration:none;
+    border-bottom:1px solid var(--rule);
+    padding-bottom:1px;
+  }
+  .sources a:hover,.sources a:focus-visible{color:var(--accent);border-color:var(--accent)}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  .colophon{
+    margin-top:2.2rem;
+    font-family:var(--num);
+    font-size:.7rem;
+    letter-spacing:.06em;
+    color:var(--ink-3);
+    line-height:1.8;
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="masthead-meta">
+      <span>2026.10.23 금</span>
+      <span class="dot">/</span>
+      <span>제 42 호</span>
+      <span class="dot">/</span>
+      <span>08:00 KST</span>
+    </div>
+    <h1>아침의 경제</h1>
+    <p class="standfirst">코스피는 금통위의 금리 동결 이후 3.52% 내려 5,534에 마감했고 코스닥도 3.62% 하락했습니다. 한국은행은 기준금리를 연 3.00%로 만장일치 동결하면서도 긴축 기조는 이어가겠다고 밝혔습니다. 원/달러 환율은 1,324.2원으로 닷새째 올해 최저 기록을 새로 썼습니다.</p>
+  </header>
+
+  <section>
+    <div class="sec-head">
+      <h2>시장</h2>
+      <span class="eyebrow">10월 22일(목) 종가</span>
+    </div>
+    <div class="ticks">
+      <div class="tick">
+        <span class="name">코스피</span>
+        <span class="val">5,533.77</span>
+        <span class="chg down">▼ 201.89 &nbsp;-3.52%</span>
+      </div>
+      <div class="tick">
+        <span class="name">코스닥</span>
+        <span class="val">764.10</span>
+        <span class="chg down">▼ 28.66 &nbsp;-3.62%</span>
+      </div>
+      <div class="tick">
+        <span class="name">원/달러</span>
+        <span class="val">1,324.2</span>
+        <span class="chg down">▼ 1.0 &nbsp;-0.08%</span>
+      </div>
+    </div>
+    <p class="ticks-note">한국거래소·서울 외환시장 주간 거래 마감 기준입니다. 환율의 변동률은 전일 종가 대비 직접 계산한 값입니다.</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 헤드라인</h2>
+      <span class="eyebrow">3건</span>
+    </div>
+
+    <div class="stories">
+
+      <article class="story">
+        <span class="kicker">금리</span>
+        <h3>한은 기준금리 3.00% 만장일치 동결, 긴축 기조는 유지</h3>
+        <p>한국은행 금융통화위원회가 어제 기준금리를 연 3.00%로 유지했습니다. 7월과 8월 두 차례 올린 뒤 처음 쉬어 가는 결정이고, 통화정책방향문에는 추가 인상의 시기와 속도를 결정하겠다는 문구가 그대로 남았습니다. 신현송 총재는 기자간담회에서 이번 동결을 긴축의 끝이 아닌 속도 조절로 설명했습니다. 성장과 물가의 상방 위험이 커 보이지만 3분기 국내총생산과 10월 물가를 더 본 뒤 판단하겠다는 것입니다. 11월 인상 여부에는 확답하지 않았고, 증권가에서는 내년 상반기까지 두 차례 더 올린다는 전망이 우세하다고 전해집니다. 동결이라는 결과보다 인상 문구가 살아 있다는 점이 시장에는 더 무겁게 읽혔습니다.</p>
+        <div class="figs">
+          <span class="fig">기준금리 <b>3.00%</b></span>
+          <span class="fig">금통위 <b>만장일치 동결</b></span>
+        </div>
+      </article>
+
+      <article class="story">
+        <span class="kicker">증시</span>
+        <h3>코스피 3.52% 급락 5,533.77, 코스닥도 3%대 하락</h3>
+        <p>어제 코스피는 201.89포인트 내린 5,533.77에 마감해 하루 전 반등분을 고스란히 반납했습니다. 코스닥은 28.66포인트 내린 764.10으로 3.62% 떨어졌습니다. 금리 동결 발표 뒤 하락폭이 커졌고, 인공지능 투자가 정점을 지난 것 아니냐는 불안에 긴축 우려가 겹쳐 외국인과 기관이 함께 팔았다는 보도가 많습니다. 코스피에서는 개인이 1조원 넘게 순매수했고, 코스닥에서는 개인이 2,577억원어치를 사들인 반면 외국인이 1,566억원, 기관이 1,047억원을 순매도했습니다. 이틀 연속 3%대 등락이 이어지면서 지수가 소수 대형 반도체주와 해외 AI 업황 뉴스에 얼마나 민감한지 다시 드러났습니다.</p>
+        <div class="figs">
+          <span class="fig">코스피 <b>-3.52%</b></span>
+          <span class="fig">코스닥 <b>-3.62%</b></span>
+          <span class="fig">코스닥 외국인 <b>-1,566억원</b></span>
+        </div>
+      </article>
+
+      <article class="story">
+        <span class="kicker">환율</span>
+        <h3>원/달러 1,324.2원, 닷새째 연저점 경신</h3>
+        <p>어제 원/달러 환율은 주간 거래 종가 기준 1,324.2원으로 1.0원 내렸습니다. 닷새 연속 올해 최저 수준을 새로 쓴 것으로, 증시가 크게 빠진 날에도 환율은 거의 움직이지 않았습니다. 총재는 간담회에서 원화가 여전히 약세라고 진단하며, 8월 말 기준 국제결제은행 실효환율이 89로 평균 101을 밑돈다는 점을 근거로 들었습니다. 환율이 많이 내렸어도 장기 평균과 비교하면 아직 원화 가치가 낮다는 설명입니다. 환율이 내리면 수입 물가와 해외 결제 부담은 줄고, 수출기업의 원화 환산 수익에는 불리하게 작용합니다.</p>
+        <div class="figs">
+          <span class="fig">원/달러 <b>1,324.2원</b></span>
+          <span class="fig">전일 대비 <b>-1.0원</b></span>
+        </div>
+      </article>
+
+    </div>
+
+    <ul class="briefs">
+      <li><span class="tag">금통위</span><span>총재는 성장률이 8월 전망보다 높아질 것으로 봤고, 중동 사태와 미국 중간선거 이후 정책 변화를 대외 불확실성으로 꼽았습니다.</span></li>
+      <li><span class="tag">일정</span><span>3분기 국내총생산과 10월 물가 지표가 다음 금리 판단의 핵심 자료로 거론됩니다.</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>정부 지원사업</h2>
+      <span class="eyebrow">확인된 공고 없음</span>
+    </div>
+    <div class="policy">
+    </div>
+    <p class="note">오늘은 확인된 신규 공고가 없습니다.</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>경제 지식 한 조각</h2>
+      <span class="eyebrow">오늘의 단어</span>
+    </div>
+    <div class="explainer">
+      <p class="rom">PEAK-OUT</p>
+      <h3 class="term">피크아웃</h3>
+      <p class="body">피크아웃은 어떤 지표나 업황이 정점에 이른 뒤 꺾이기 시작한다는 뜻의 시장 용어입니다. 실적, 출하량, 투자 규모처럼 오르던 숫자가 더는 늘지 않거나 증가 속도가 둔해질 때 쓰입니다. 실제로 꺾였는지와 별개로, 꺾일지 모른다는 우려만으로도 주가가 먼저 움직이는 일이 흔합니다.</p>
+      <p class="body">주가는 현재 실적보다 앞으로의 기대를 담아 움직입니다. 그래서 좋은 숫자가 나와도 더 오를 여지가 없다고 읽히면 팔리고, 반대로 나쁜 숫자도 바닥이라는 해석이 나오면 오릅니다. 전망이 한 방향으로 쏠려 있을수록 이런 해석 한 줄에 지수가 크게 흔들립니다.</p>
+      <p class="sokey"><b>그래서 오늘 —</b><br>어제 증시 하락의 배경으로 인공지능 투자가 정점을 지났다는 불안이 거론됐습니다. 하루 전에는 AI 서버 업체의 실적 호조로 크게 반등했던 터라, 같은 업종을 두고 기대와 우려가 이틀 사이에 엇갈린 셈입니다. 여기에 금리 인상 문구가 유지되면서 부담이 겹쳤습니다.</p>
+    </div>
+  </section>
+
+  <footer class="sources">
+    <span class="eyebrow">출처</span>
+    <ul>
+      <li><a href="https://www.newspim.com/news/view/20261022001100">[마감시황] 코스피·코스닥 3%대 동반 하락…외국인 매도에 약세 — 뉴스핌</a></li>
+      <li><a href="https://www.mt.co.kr/stock/2026/10/22/2026102215280317031">[스팟] 코스피 201.89포인트(3.52%) 내린 5533.77 마감 — 머니투데이</a></li>
+      <li><a href="https://www.mt.co.kr/stock/2026/10/22/2026102215280359015">[스팟] 코스닥 28.66포인트(3.62%) 내린 764.10 마감 — 머니투데이</a></li>
+      <li><a href="https://www.news1.kr/finance/general-stock/6328824">코스피, 3.52% 하락한 5533.77 마감…코스닥 3.62%↓(2보) — 뉴스1</a></li>
+      <li><a href="https://www.fnnews.com/news/202610221300213740">신현송 "금리 동결은 호미질의 결실…성장·물가 강해 긴축 지속"(종합) — 파이낸셜뉴스</a></li>
+      <li><a href="https://www.fnnews.com/news/202610221409076317">증권가 "한은, 예상된 금리 동결…긴축 종료 아닌 '속도 조절'" — 파이낸셜뉴스</a></li>
+      <li><a href="https://www.g-enews.com/article/Finance/2026/10/202610221152316837bb91c46fcd_1">[기준금리 동결] 신현송 한은 총재 "금리 동결은 '호미질'의 결실…원화는 여전히 약세" — 글로벌이코노믹</a></li>
+      <li><a href="https://www.seoul.co.kr/news/economy/finance/2026/10/23/20261023031006">기준금리 일단 3.0% 동결… 새달 '세 번째 인상' 나서나 — 서울신문</a></li>
+      <li><a href="https://www.hankookilbo.com/news/article/A2026102210380005317">한은, 3%서 '매파적 동결…신현송 "성장·물가 더 세져 긴축 지속" — 한국일보</a></li>
+    </ul>
+    <p class="colophon">
+      아침의 경제 · 매일 08:00 발행 · <a href="https://bhforlife311.github.io/econ-brief/archive.html">지난 호</a><br>
+      기사 요약과 해설은 원문을 바탕으로 재구성한 것입니다. 투자 판단의 근거로 삼지 마세요.
+    </p>
+  </footer>
+</div>
+</body>
+</html>
